@@ -2,3 +2,6 @@
 .vscode
 
 !.gitignore
+
+# Testing gitignore
+testingGitIgnore.txt
