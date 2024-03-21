@@ -77,7 +77,6 @@ function saveLoadout() {
     // Creating a loadout and add to array
     newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
     Loadouts.push(newLoadout);
-    console.log(Loadouts);
 
     // Adding the new loadout to the loadoutList to display
     loadoutString = `${loadoutName}: ${topLeft.name}, ${topMiddle.name}... Other loadout information here`;
