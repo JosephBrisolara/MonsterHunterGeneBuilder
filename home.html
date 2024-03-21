@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="scripts/geneClass.js"></script>
+    <script src="scripts/dnd.js"></script>
+</head>
+
+<body>
+    <main>
+        <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
+        <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
+
+        <div id="geneGrid">
+            <div id="topLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="topMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="topRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="middleLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="middleMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="middleRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="bottomLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="bottomMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="bottomRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+
+        <div id="loadoutList"></div>
+
+        <br>
+        <input type="search" id="geneSearch" name="q" placeholder="Search Gene Name..." size="30">
+        <button id="searchButton" onclick="searchGenes()">Search</button>
+        <br>
+        <div id="searchedGenes"></div>
+        <br>
+        <div id="geneList" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    </main>
+</body>
+
+</html>

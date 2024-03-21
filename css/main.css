@@ -1,0 +1,25 @@
+#geneGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+}
+
+.gridItem {
+    padding: 30px;
+    border: dashed blue 3px;
+    max-height: 400px;
+}
+
+.geneListItem {
+    padding: 5px;
+    margin: 0px;
+    color: red;
+    border: purple 3px dotted;
+    max-width: 35%;
+}
+
+#loadoutName {
+    padding: 5px;
+    margin: 3px;
+}
