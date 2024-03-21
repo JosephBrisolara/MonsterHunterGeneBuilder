@@ -47,7 +47,6 @@ GeneArray.push(new Gene(18, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "
 
 let Loadouts = [];
 
-console.log(GeneArray);
 
 function generateGeneCard(gene, parentID) {
     const p = document.createElement("p")
