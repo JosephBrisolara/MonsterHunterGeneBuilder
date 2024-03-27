@@ -17,6 +17,8 @@
     color: red;
     border: purple 3px dotted;
     max-width: 35%;
+    cursor: move;
+    cursor: -webkit-grabbing;
 }
 
 #loadoutName {
