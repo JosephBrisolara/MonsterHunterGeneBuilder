@@ -54,8 +54,6 @@ function generateGeneCard(gene, parentID) {
     p.innerText = `ID: ${gene.id}, ${gene.name}, other info goes here in an aesthetic way`;
     p.id = `GeneID:${gene.id}`;
     p.value = gene;
-    p.setAttribute("ondragstart", "drag(event)");
-    p.setAttribute("draggable", "true");
     p.setAttribute("class", "geneListItem")
     document.getElementById(parentID).appendChild(p);
 }

@@ -5,19 +5,59 @@
 <head>
     <title>Home</title>
 
+    <!-- Sortable js library -->
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sortable.css">
+
     <script src="scripts/geneClass.js"></script>
     <script src="scripts/dnd.js"></script>
+    <script src="scripts/sortable.js"></script>
+
 </head>
 
 <body>
     <main>
         <br>
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+        <ul id="firstList" class="listGroup">
+            <li class="listGroup"><span class="badge">1</span> <span class="glyphicon glyphicon-move"
+                    aria-hidden="true"></span>Item 1</li>
+            <li class="listGroup"><span class="badge">2</span> <span class="glyphicon glyphicon-move"
+                    aria-hidden="true"></span>Item 2</li>
+            <li class="listGroup"><span class="badge">3</span> <span class="glyphicon glyphicon-move"
+                    aria-hidden="true"></span>Item 3</li>
         </ul>
+
+        <!-- Simple List -->
+        <div id="simpleList" class="list-group">
+            <div class="list-group-item">This is <a href="http://rubaxa.github.io/Sortable/">Sortable</a></div>
+            <div class="list-group-item">It works with Bootstrap...</div>
+            <div class="list-group-item">...out of the box.</div>
+            <div class="list-group-item">It has support for touch devices.</div>
+            <div class="list-group-item">Just drag some elements around.</div>
+        </div>
+
+
+        <!-- List with handle -->
+        <div id="listWithHandle" class="list-group">
+            <div class="list-group-item">
+                <span class="badge">14</span>
+                <span class="glyphicon glyphicon-move" aria-hidden="true"></span>
+                Drag me by the handle
+            </div>
+            <div class="list-group-item">
+                <span class="badge">1</span>
+                <span class="glyphicon glyphicon-move" aria-hidden="true"></span>
+                You can also select text
+            </div>
+            <div class="list-group-item">
+                <span class="badge">2</span>
+                <span class="glyphicon glyphicon-move" aria-hidden="true"></span>
+                Best of both worlds!
+            </div>
+        </div>
         <br>
         <br>
         <br>
@@ -26,16 +66,16 @@
         <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
         <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
 
-        <div id="geneGrid">
-            <div id="topLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="topMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="topRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="middleLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="middleMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="middleRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="bottomLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="bottomMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="bottomRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="geneGrid" class="geneGrid">
+            <div id="topLeft" class="gridItem"></div>
+            <div id="topMiddle" class="gridItem"></div>
+            <div id="topRight" class="gridItem"></div>
+            <div id="middleLeft" class="gridItem"></div>
+            <div id="middleMiddle" class="gridItem"></div>
+            <div id="middleRight" class="gridItem"></div>
+            <div id="bottomLeft" class="gridItem"></div>
+            <div id="bottomMiddle" class="gridItem"></div>
+            <div id="bottomRight" class="gridItem"></div>
         </div>
 
         <div id="loadoutList"></div>
@@ -46,7 +86,7 @@
         <br>
         <div id="searchedGenes"></div>
         <br>
-        <div id="geneList" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="geneList" class="geneListItems"></div>
 
     </main>
 </body>
