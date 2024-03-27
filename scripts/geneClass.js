@@ -47,8 +47,6 @@ GeneArray.push(new Gene(18, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "
 
 let Loadouts = [];
 
-console.log(GeneArray);
-
 function generateGeneCard(gene, parentID) {
     const p = document.createElement("p")
     p.innerText = `ID: ${gene.id}, ${gene.name}, other info goes here in an aesthetic way`;
@@ -59,7 +57,7 @@ function generateGeneCard(gene, parentID) {
 }
 
 function saveLoadout() {
-    // Getting all of the genes in the grids
+    // Getting all of the genes from in the grids
     topLeft = document.getElementById("topLeft").firstChild.value;
     topMiddle = document.getElementById("topMiddle").firstChild.value;
     topRight = document.getElementById("topRight").firstChild.value;

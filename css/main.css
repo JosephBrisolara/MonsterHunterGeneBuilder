@@ -7,13 +7,14 @@
 
 .gridItem {
     padding: 30px;
+    margin: 5px;
     border: dashed blue 3px;
     max-height: 400px;
 }
 
 .geneListItem {
     padding: 5px;
-    margin: 0px;
+    margin: 10px;
     color: red;
     border: purple 3px dotted;
     max-width: 35%;
