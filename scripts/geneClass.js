@@ -25,6 +25,7 @@ class Loadout {
     }
 }
 
+// Create the gene array and add temp data
 let GeneArray = [];
 GeneArray.push(new Gene(1, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
 GeneArray.push(new Gene(2, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
@@ -45,6 +46,7 @@ GeneArray.push(new Gene(16, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "
 GeneArray.push(new Gene(17, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
 GeneArray.push(new Gene(18, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
 
+// Create an empty array for the loadouts
 let Loadouts = [];
 
 function generateGeneCard(gene, parentID) {
