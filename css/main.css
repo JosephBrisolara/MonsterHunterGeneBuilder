@@ -1,6 +1,6 @@
 #geneGrid {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 32% 32% 32%;
     grid-template-rows: auto auto auto;
     column-gap: 10px;
     row-gap: 5px;
