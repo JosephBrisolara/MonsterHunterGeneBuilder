@@ -6,42 +6,60 @@
 
     <!-- Sortable js library -->
     <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
 
-    <link rel="stylesheet" href="css/main.css">
 
     <script src="scripts/geneClass.js"></script>
     <script src="scripts/sortable.js"></script>
 
+    <link rel="stylesheet" href="css/main.css">
+
+
 </head>
 
 <body>
+    <h1>Monster Hunter Gene Builder</h1>
     <main>
-        <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
-        <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
+        <div id="mainLeftColumn">
+            <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
+            <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
 
-        <div id="geneGrid" class="geneGrid">
-            <div id="topLeft" class="gridItem"></div>
-            <div id="topMiddle" class="gridItem"></div>
-            <div id="topRight" class="gridItem"></div>
-            <div id="middleLeft" class="gridItem"></div>
-            <div id="middleMiddle" class="gridItem"></div>
-            <div id="middleRight" class="gridItem"></div>
-            <div id="bottomLeft" class="gridItem"></div>
-            <div id="bottomMiddle" class="gridItem"></div>
-            <div id="bottomRight" class="gridItem"></div>
+            <div id="geneGrid" class="geneGrid">
+                <div id="topLeft" class="gridItem"></div>
+                <div id="topMiddle" class="gridItem"></div>
+                <div id="topRight" class="gridItem"></div>
+                <div id="middleLeft" class="gridItem"></div>
+                <div id="middleMiddle" class="gridItem"></div>
+                <div id="middleRight" class="gridItem"></div>
+                <div id="bottomLeft" class="gridItem"></div>
+                <div id="bottomMiddle" class="gridItem"></div>
+                <div id="bottomRight" class="gridItem"></div>
+            </div>
+            <div id="loadoutList"></div>
+            <br>
+
+            <div id="searchItems">
+                <div>
+                    <h2>Gene Name Search</h2>
+                    <input type="search" id="geneSearch" name="q" placeholder="Search Gene Name..." size="30">
+                    <button id="searchButton" onclick="searchGenes()">Search</button>
+                    <br>
+                    <div id="searchedGenes"></div>
+                </div>
+                <div>
+                    <h2>Skill Name Search</h2>
+                    <input type="search" id="skillSearch" name="q" placeholder="Search Skill Name..." size="30">
+                    <button id="searchButton" onclick="searchSkills()">Search</button>
+                    <br>
+                    <div id="searchedSkills"></div>
+                </div>
+            </div>
         </div>
 
-        <div id="loadoutList"></div>
-
-        <br>
-        <input type="search" id="geneSearch" name="q" placeholder="Search Gene Name..." size="30">
-        <button id="searchButton" onclick="searchGenes()">Search</button>
-        <br>
-        <div id="searchedGenes"></div>
-        <br>
-        <div id="geneList" class="geneListItems"></div>
-
+        <div id="mainRightColumn">
+            <h2>Gene List</h2>
+            <div id="geneList" class="geneListItems"></div>
+        </div>
     </main>
 </body>
 

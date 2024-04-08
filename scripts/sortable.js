@@ -5,6 +5,9 @@ window.addEventListener("load", function () {
             name: "genes"
         },
         animation: 100,
+        scroll: true,
+        forceAutoScrollFallback: true,
+        scrollSpeed: 30,
 
         // Restricting the ability to put multiple items from the gene list into the same gene grid container
         // Element is dropped into the list from another list
@@ -14,6 +17,15 @@ window.addEventListener("load", function () {
 
             // Removing the padding from the gene grid container to better fit the gene card
             destination.style.padding = 0;
+        },
+        onSort: function (evt) {
+            // When moving a gene from one gene grid container to another gene grid container
+            destination = evt.to;
+            source = evt.from;
+            // Remove the padding from the destination
+            destination.style.padding = 0;
+            // Add padding to the source so the box doesn't disappear
+            source.style.padding = 30;
         }
     });
 
@@ -23,7 +35,22 @@ window.addEventListener("load", function () {
             name: "genes",
             put: false
         },
-        animation: 100
+        animation: 100,
+        scroll: true,
+        forceAutoScrollFallback: true,
+        scrollSpeed: 30
+    })
+
+    // Add the ability to drag within the searched skills
+    Sortable.create(searchedSkills, {
+        group: {
+            name: "genes",
+            put: false
+        },
+        animation: 100,
+        scroll: true,
+        forceAutoScrollFallback: true,
+        scrollSpeed: 30
     })
 
     // Allow the genes to be put into the gene grid containers
