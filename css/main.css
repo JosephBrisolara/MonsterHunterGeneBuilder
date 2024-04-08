@@ -9,9 +9,9 @@
 .gridItem {
     /* padding: 50px; */
     margin: 5px;
-    border: solid blue 3px;
+    border: solid #92b6d5 3px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: red;
+    background-color: #ad5d5d;
     min-height: 130px;
     min-width: 100%;
 }
@@ -28,8 +28,8 @@
     min-height: 100px;
     max-width: 600px;
     color: red;
-    background-color: ligh;
-    border: purple 3px dotted;
+    background-color: lightblue;
+    border: purple 3px solid;
     cursor: move;
     cursor: -webkit-grabbing;
 }
@@ -38,6 +38,10 @@
 .geneListItem>*>* {
     margin: 0 0;
     color: green;
+}
+
+body {
+    background-color: #af9483;
 }
 
 #loadoutName {
