@@ -25,10 +25,6 @@ class Loadout {
     }
 }
 
-// Create the gene array and add temp data
-// ID, Gene Name, Skill Name, Type, Element, Description and Size
-
-
 // Create an empty array for the loadouts
 let Loadouts = [];
 
@@ -98,11 +94,12 @@ function saveLoadout() {
     // Creating a loadout and add to array
     newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
     Loadouts.push(newLoadout);
-    console.log(Loadouts);
 
-    // Adding the new loadout to the loadoutList to display
-    loadoutString = `${loadoutName}: ${topLeft.name}, ${topMiddle.name}... Other loadout information here`;
-    document.getElementById("loadoutList").innerText += '\n' + loadoutString;
+    console.log(Loadouts);
+    // Signal that the new loadout has been added
+    document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
+
+    sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
 }
 
 function searchGenes() {
@@ -137,8 +134,8 @@ function searchSkills() {
     }
 }
 
-window.addEventListener("load", function () {
-    // Adding all genes in GeneArray to geneList
-    for (let i = 0; i < genes.length; i++)
-        generateGeneCard(genes[i], "geneList");
-});
+// window.addEventListener("load", function () {
+//     // Adding all genes in GeneArray to geneList
+//     for (let i = 0; i < genes.length; i++)
+//         generateGeneCard(genes[i], "geneList");
+// });
