@@ -27,25 +27,7 @@ class Loadout {
 
 // Create the gene array and add temp data
 // ID, Gene Name, Skill Name, Type, Element, Description and Size
-let GeneArray = [];
-GeneArray.push(new Gene(1, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies. This is to test what happens when there is a lot of text to see what the sizing does because that is important", 1))
-GeneArray.push(new Gene(2, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(3, "Blast Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(4, "Fire Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(5, "Water Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(6, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(7, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(8, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(9, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(10, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(11, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(12, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(13, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(14, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(15, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(16, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(17, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
-GeneArray.push(new Gene(18, "Whip Gene", "Tail Spin", "Technical", "Non-Elem", "Deals Light Non-Elem to all Enemies", 1))
+
 
 // Create an empty array for the loadouts
 let Loadouts = [];
@@ -132,9 +114,9 @@ function searchGenes() {
     document.getElementById("searchedGenes").innerHTML = null;
 
     // Use regex to compare the string to all gene names in the gene array
-    for (let i = 0; i < GeneArray.length; i++) {
-        if (regex.test(GeneArray[i].name)) {
-            generateGeneCard(GeneArray[i], "searchedGenes")
+    for (let i = 0; i < genes.length; i++) {
+        if (regex.test(genes[i].name)) {
+            generateGeneCard(genes[i], "searchedGenes")
         }
     }
 }
@@ -148,15 +130,15 @@ function searchSkills() {
     document.getElementById("searchedSkills").innerHTML = null;
 
     // Use regex to compare the string to all gene names in the gene array
-    for (let i = 0; i < GeneArray.length; i++) {
-        if (regex.test(GeneArray[i].skillName)) {
-            generateGeneCard(GeneArray[i], "searchedSkills")
+    for (let i = 0; i < genes.length; i++) {
+        if (regex.test(genes[i].skillName)) {
+            generateGeneCard(genes[i], "searchedSkills")
         }
     }
 }
 
 window.addEventListener("load", function () {
     // Adding all genes in GeneArray to geneList
-    for (let i = 0; i < GeneArray.length; i++)
-        generateGeneCard(GeneArray[i], "geneList");
+    for (let i = 0; i < genes.length; i++)
+        generateGeneCard(genes[i], "geneList");
 });
