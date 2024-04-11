@@ -32,6 +32,77 @@ function saveLoadout() {
     console.log(sessionStorage.getItem("Loadouts"));
 }
 
+function saveRandomLoadout() {
+    // Getting all of the genes from in the grids
+    topLeft = genes[32];
+    topMiddle = genes[24];
+    topRight = genes[3];
+    middleLeft = genes[284];
+    middleMiddle = genes[34];
+    middleRight = genes[16];
+    bottomLeft = genes[8];
+    bottomMiddle = genes[75];
+    bottomRight = genes[57];
+
+    // Getting the input name
+    loadoutName = document.getElementById("loadoutName").value;
+
+    // Creating a loadout and add to array
+    newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
+    Loadouts.push(newLoadout);
+
+    console.log(Loadouts);
+    // Signal that the new loadout has been added
+    document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
+
+    sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
+    console.log(sessionStorage.getItem("Loadouts"));
+}
+
+// Search Feature
+window.addEventListener("submit", function(evt) {
+    evt.preventDefault();
+
+    // Get all of the values from the input fields
+    const geneName = document.getElementById("searchGeneName");
+    const skillName = document.getElementById("searchSkillName");
+    const fire = document.getElementById("fire");
+    const water = document.getElementById("water");
+    const ice = document.getElementById("ice");
+    const thunder = document.getElementById("thunder");
+    const dragon = document.getElementById("dragon");
+    const power = document.getElementById("power");
+    const technical = document.getElementById("technical");
+    const speed = document.getElementById("speed");
+    const small = document.getElementById("small");
+    const medium = document.getElementById("medium");
+    const large = document.getElementById("large");
+    const xl = docuemnt.getElementById("XL");
+
+    // Search for genes and output their gene cards
+    const finalGenes = [];
+
+    for(let i = 0; i < finalGenes.length; i++) {
+        generateGeneCard(finalGenes[i], "searchItems")
+    }
+
+    // Clear all of the fields
+    geneName.value = '';
+    skillName.value = '';
+    fire.checked = false;
+    water.checked = false;
+    ice.checked = false;
+    thunder.checked = false;
+    dragon.checked = false;
+    power.checked = false;
+    technical.checked = false;
+    speed.checked = false;
+    small.checked = false;
+    medium.checked = false;
+    large.checked = false;
+    xl.checked = false;
+})
+
 function searchGenes() {
     // Get the string from the search bar
     geneNameInput = document.getElementById("geneSearch").value;
@@ -62,31 +133,4 @@ function searchSkills() {
             generateGeneCard(genes[i], "searchedSkills")
         }
     }
-}
-
-function saveRandomLoadout() {
-    // Getting all of the genes from in the grids
-    topLeft = genes[32];
-    topMiddle = genes[24];
-    topRight = genes[3];
-    middleLeft = genes[284];
-    middleMiddle = genes[34];
-    middleRight = genes[16];
-    bottomLeft = genes[8];
-    bottomMiddle = genes[75];
-    bottomRight = genes[57];
-
-    // Getting the input name
-    loadoutName = document.getElementById("loadoutName").value;
-
-    // Creating a loadout and add to array
-    newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
-    Loadouts.push(newLoadout);
-
-    console.log(Loadouts);
-    // Signal that the new loadout has been added
-    document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
-
-    sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
-    console.log(sessionStorage.getItem("Loadouts"));
 }
