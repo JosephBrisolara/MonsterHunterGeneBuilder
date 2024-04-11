@@ -62,6 +62,7 @@ function saveRandomLoadout() {
 // Search Feature
 window.addEventListener("submit", function(evt) {
     evt.preventDefault();
+    console.log("Testing");
 
     // Get all of the values from the input fields
     const geneName = document.getElementById("searchGeneName");
@@ -77,7 +78,7 @@ window.addEventListener("submit", function(evt) {
     const small = document.getElementById("small");
     const medium = document.getElementById("medium");
     const large = document.getElementById("large");
-    const xl = docuemnt.getElementById("XL");
+    const xl = document.getElementById("XL");
 
     // Search for genes and output their gene cards
     const finalGenes = [];
@@ -87,8 +88,8 @@ window.addEventListener("submit", function(evt) {
     }
 
     // Clear all of the fields
-    geneName.value = '';
-    skillName.value = '';
+    geneName.value = "";
+    skillName.value = "";
     fire.checked = false;
     water.checked = false;
     ice.checked = false;
