@@ -77,54 +77,6 @@ function generateGeneCard(gene, parentID) {
 }
 
 
-<<<<<<< HEAD
-    // Getting the input name
-    loadoutName = document.getElementById("loadoutName").value;
-
-    // Creating a loadout and add to array
-    newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
-    Loadouts.push(newLoadout);
-
-    console.log(Loadouts);
-    // Signal that the new loadout has been added
-    document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
-
-    sessionStorage.setItem(newLoadout.monsterName, JSON.stringify(Loadouts));
-}
-
-function searchGenes() {
-    // Get the string from the search bar
-    geneNameInput = document.getElementById("geneSearch").value;
-    const regex = new RegExp(geneNameInput)
-
-    // Empty the Container to Prepare to add GeneCards
-    document.getElementById("searchedGenes").innerHTML = null;
-
-    // Use regex to compare the string to all gene names in the gene array
-    for (let i = 0; i < genes.length; i++) {
-        if (regex.test(genes[i].name)) {
-            generateGeneCard(genes[i], "searchedGenes")
-        }
-    }
-}
-
-function searchSkills() {
-    // Get the string from the search bar
-    skillNameInput = document.getElementById("skillSearch").value;
-    const regex = new RegExp(skillNameInput)
-
-    // Empty the Container to Prepare to add GeneCards
-    document.getElementById("searchedSkills").innerHTML = null;
-
-    // Use regex to compare the string to all gene names in the gene array
-    for (let i = 0; i < genes.length; i++) {
-        if (regex.test(genes[i].skillName)) {
-            generateGeneCard(genes[i], "searchedSkills")
-        }
-    }
-}
-=======
->>>>>>> searchFeature
 
 // window.addEventListener("load", function () {
 //     // Adding all genes in GeneArray to geneList
