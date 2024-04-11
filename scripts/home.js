@@ -23,10 +23,8 @@ function saveRandomLoadout() {
     newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
     Loadouts.push(newLoadout);
 
-    console.log(Loadouts);
     // Signal that the new loadout has been added
     document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
 
-    sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
-    console.log(sessionStorage.getItem("Loadouts"));
+    sessionStorage.setItem(newLoadout.monsterName, JSON.stringify(newLoadout));
 }

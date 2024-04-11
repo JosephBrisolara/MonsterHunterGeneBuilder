@@ -1,7 +1,8 @@
-const GeneLoadoutString = sessionStorage.getItem("Loadouts");
-const GeneLoadouts = JSON.parse(GeneLoadoutString);
-
 function createLoadoutCard(Loadout, parentID) {
+    if(typeof Loadout === 'string') {
+        Loadout = JSON.parse(Loadout);
+    }
+    
     // Create the card
     const c = document.createElement("div");
     c.value = Loadout;
@@ -61,9 +62,15 @@ function createLoadoutCard(Loadout, parentID) {
 
 }
 
-function displayLoadouts(Loadouts) {
-    for (let i = 0; i < Loadouts.length; i++) {
-        createLoadoutCard(Loadouts[i], "displayAllLoadouts");
+function displayLoadouts() {
+    for (let i = 0; i < sessionStorage.length; i++) {
+        console.log("Create loadout");
+        const loadoutString = sessionStorage.getItem(sessionStorage.key(i));
+        if(loadoutString == "true") {
+            continue;
+        }
+        console.log(loadoutString);
+        createLoadoutCard(JSON.parse(loadoutString), "displayAllLoadouts");
     }
 }
 
@@ -149,5 +156,5 @@ function bingoBuffs(Loadout) {
 }
 
 window.addEventListener("load", function () {
-    displayLoadouts(GeneLoadouts);
+    displayLoadouts();
 })
