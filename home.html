@@ -56,8 +56,8 @@
                     <legend>Name Search</legend>
                     <label for="searchGeneName">Search Gene Name</label><br>
                     <input type="text" id="searchGeneName" name="searchGeneName"><br>
-                    <label for="seachSkillName">Search Skill Name</label><br>
-                    <input type="text" id="seachSkillName" name="seachSkillName"><br>
+                    <label for="searchSkillName">Search Skill Name</label><br>
+                    <input type="text" id="searchSkillName" name="searchSkillName"><br>
                 </fieldset>
                 <!-- For elements -->
                 <fieldset>
@@ -97,8 +97,10 @@
                     <label for="XL">XL</label><br>
                 </fieldset>
                 <!-- Submit Button -->
-                <br>
-                <input type="submit" value="Submit">
+                <fieldset>
+                    <button type="button" id="searchButton" onclick="search()">Search</button>
+                </fieldset>
+                
             </form>
             <div id="searchitems"></div>
             <!-- <div id="searchItems">

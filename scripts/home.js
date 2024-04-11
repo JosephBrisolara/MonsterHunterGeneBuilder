@@ -2,8 +2,51 @@ window.addEventListener("load", function () {
     // Adding all genes in GeneArray to geneList
     for (let i = 0; i < genes.length; i++)
         generateGeneCard(genes[i], "geneList");
+
 });
 
+function search() {
+        console.log("Testing");
+    
+        // Get all of the values from the input fields
+        const geneName = document.getElementById("searchGeneName");
+        const skill = document.getElementById("searchSkillName");
+        const fire = document.getElementById("fire");
+        const water = document.getElementById("water");
+        const ice = document.getElementById("ice");
+        const thunder = document.getElementById("thunder");
+        const dragon = document.getElementById("dragon");
+        const power = document.getElementById("power");
+        const technical = document.getElementById("technical");
+        const speed = document.getElementById("speed");
+        const small = document.getElementById("small");
+        const medium = document.getElementById("medium");
+        const large = document.getElementById("large");
+        const xl = document.getElementById("XL");
+    
+        // Search for genes and output their gene cards
+        const finalGenes = [];
+    
+        for(let i = 0; i < finalGenes.length; i++) {
+            generateGeneCard(finalGenes[i], "searchItems")
+        }
+    
+        // Clear all of the fields
+        geneName.value = " ";
+        skill.value = " ";
+        fire.checked = false;
+        water.checked = false;
+        ice.checked = false;
+        thunder.checked = false;
+        dragon.checked = false;
+        power.checked = false;
+        technical.checked = false;
+        speed.checked = false;
+        small.checked = false;
+        medium.checked = false;
+        large.checked = false;
+        xl.checked = false;
+}
 
 function saveLoadout() {
     // Getting all of the genes from in the grids
@@ -60,49 +103,7 @@ function saveRandomLoadout() {
 }
 
 // Search Feature
-window.addEventListener("submit", function(evt) {
-    evt.preventDefault();
-    console.log("Testing");
 
-    // Get all of the values from the input fields
-    const geneName = document.getElementById("searchGeneName");
-    const skillName = document.getElementById("searchSkillName");
-    const fire = document.getElementById("fire");
-    const water = document.getElementById("water");
-    const ice = document.getElementById("ice");
-    const thunder = document.getElementById("thunder");
-    const dragon = document.getElementById("dragon");
-    const power = document.getElementById("power");
-    const technical = document.getElementById("technical");
-    const speed = document.getElementById("speed");
-    const small = document.getElementById("small");
-    const medium = document.getElementById("medium");
-    const large = document.getElementById("large");
-    const xl = document.getElementById("XL");
-
-    // Search for genes and output their gene cards
-    const finalGenes = [];
-
-    for(let i = 0; i < finalGenes.length; i++) {
-        generateGeneCard(finalGenes[i], "searchItems")
-    }
-
-    // Clear all of the fields
-    geneName.value = "";
-    skillName.value = "";
-    fire.checked = false;
-    water.checked = false;
-    ice.checked = false;
-    thunder.checked = false;
-    dragon.checked = false;
-    power.checked = false;
-    technical.checked = false;
-    speed.checked = false;
-    small.checked = false;
-    medium.checked = false;
-    large.checked = false;
-    xl.checked = false;
-})
 
 function searchGenes() {
     // Get the string from the search bar
