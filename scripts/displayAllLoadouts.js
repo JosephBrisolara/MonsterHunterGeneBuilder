@@ -75,9 +75,9 @@ function bingoBuffs(Loadout) {
         "Ice": 0,
         "Thunder": 0,
         "Dragon": 0,
-        "Power": 0,
-        "Speed": 0,
-        "Technical": 0
+        "Power Type": 0,
+        "Speed Type": 0,
+        "Technical Type": 0
     }
     // Check for Elements
     // Top Row
@@ -145,7 +145,6 @@ function bingoBuffs(Loadout) {
     if ((Loadout.bottomLeft.type == Loadout.middleMiddle.type) && (Loadout.bottomLeft.type == Loadout.topRight.type)) {
         buffs[Loadout.bottomLeft.type] = buffs[Loadout.bottomLeft.type] + 1;
     }
-
     return buffs;
 }
 
