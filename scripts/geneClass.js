@@ -75,11 +75,3 @@ function generateGeneCard(gene, parentID) {
     // Appending the Gene Card to the container specified
     document.getElementById(parentID).appendChild(p);
 }
-
-
-
-// window.addEventListener("load", function () {
-//     // Adding all genes in GeneArray to geneList
-//     for (let i = 0; i < genes.length; i++)
-//         generateGeneCard(genes[i], "geneList");
-// });
