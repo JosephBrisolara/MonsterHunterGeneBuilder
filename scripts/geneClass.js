@@ -100,6 +100,7 @@ function saveLoadout() {
     document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
 
     sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
+    console.log(sessionStorage.getItem("Loadouts"));
 }
 
 function searchGenes() {

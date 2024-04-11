@@ -7,11 +7,18 @@ function createLoadoutCard(Loadout, parentID) {
     c.value = Loadout;
     c.setAttribute("class", "LoadoutCard")
 
-
     // Appending the Gene Card to the c specified
     document.getElementById(parentID).appendChild(c);
 
-    // Creating elements for the ID, Gene Name, Skill Name, Type, Element, Description and Size
+    // Adding the Loadout Name to the Loadout Card
+    const t = document.createElement('p');
+    t.innerText = Loadout.monsterName;
+    c.appendChild(t);
+
+    // Creating elements for the genes in the grid
+    const g = document.createElement('div');
+    g.setAttribute("class", "LoadoutGrid");
+
     const UL = document.createElement("p");
     const UM = document.createElement("p");
     const UR = document.createElement("p");
@@ -34,26 +41,114 @@ function createLoadoutCard(Loadout, parentID) {
     LR.innerText = Loadout.bottomRight.skillName;
 
     // Adding the genes to the c
-    c.appendChild(UL);
-    c.appendChild(UM);
-    c.appendChild(UR);
-    c.appendChild(ML);
-    c.appendChild(MM);
-    c.appendChild(MR);
-    c.appendChild(LL);
-    c.appendChild(LM);
-    c.appendChild(LR);
+    g.appendChild(UL);
+    g.appendChild(UM);
+    g.appendChild(UR);
+    g.appendChild(ML);
+    g.appendChild(MM);
+    g.appendChild(MR);
+    g.appendChild(LL);
+    g.appendChild(LM);
+    g.appendChild(LR);
+
+    // Attach LoadoutGrid to LoadoutCard
+    c.appendChild(g);
+
+    const buffs = bingoBuffs(Loadout);
+    const b = document.createElement("div");
+    b.innerText = JSON.stringify(buffs);
+    c.appendChild(b);
 
 }
 
 function displayLoadouts(Loadouts) {
-    console.log("got into displayLoadouts");
     for (let i = 0; i < Loadouts.length; i++) {
         createLoadoutCard(Loadouts[i], "displayAllLoadouts");
     }
 }
 
-window.addEventListener("load", function () {
+// Pass in a Loadout and return json with the bingo buffs
+function bingoBuffs(Loadout) {
+    buffs = {
+        "Non-Elem": 0,
+        "Fire": 0,
+        "Ice": 0,
+        "Thunder": 0,
+        "Dragon": 0,
+        "Power": 0,
+        "Speed": 0,
+        "Technical": 0
+    }
+    // Check for Elements
+    // Top Row
+    if ((Loadout.topLeft.element == Loadout.topMiddle.element) && (Loadout.topLeft.element == Loadout.topRight.element)) {
+        buffs[Loadout.topLeft.element] = buffs[Loadout.topLeft.element] + 1;
+    }
+    // Middle Row
+    if ((Loadout.middleLeft.element == Loadout.middleMiddle.element) && (Loadout.middleLeft.element == Loadout.middleRight.element)) {
+        buffs[Loadout.middleLeft.element] = buffs[Loadout.middleLeft.element] + 1;
+    }
+    // Bottom Row
+    if ((Loadout.bottomLeft.element == Loadout.bottomMiddle.element) && (Loadout.bottomLeft.element == Loadout.bottomRight.element)) {
+        buffs[Loadout.bottomLeft.element] = buffs[Loadout.bottomLeft.element] + 1;
+    }
+    // Left Column
+    if ((Loadout.topLeft.element == Loadout.middleLeft.element) && (Loadout.topLeft.element == Loadout.bottomLeft.element)) {
+        buffs[Loadout.topLeft.element] = buffs[Loadout.topLeft.element] + 1;
+    }
+    // Middle Column
+    if ((Loadout.topMiddle.element == Loadout.middleMiddle.element) && (Loadout.topMiddle.element == Loadout.bottomMiddle.element)) {
+        buffs[Loadout.topMiddle.element] = buffs[Loadout.topMiddle.element] + 1;
+    }
+    // Right Column
+    if ((Loadout.topRight.element == Loadout.middleRight.element) && (Loadout.topRight.element == Loadout.bottomRight.element)) {
+        buffs[Loadout.topRight.element] = buffs[Loadout.topRight.element] + 1;
+    }
+    // Diagonal top left to bottom right
+    if ((Loadout.topLeft.element == Loadout.middleMiddle.element) && (Loadout.topLeft.element == Loadout.bottomRight.element)) {
+        buffs[Loadout.topLeft.element] = buffs[Loadout.topLeft.element] + 1;
+    }
+    // Diagonal bottom left to top right
+    if ((Loadout.bottomLeft.element == Loadout.middleMiddle.element) && (Loadout.bottomLeft.element == Loadout.topRight.element)) {
+        buffs[Loadout.bottomLeft.element] = buffs[Loadout.bottomLeft.element] + 1;
+    }
 
+    // Check for Types
+    if ((Loadout.topLeft.type == Loadout.topMiddle.type) && (Loadout.topLeft.type == Loadout.topRight.type)) {
+        buffs[Loadout.topLeft.type] = buffs[Loadout.topLeft.type] + 1;
+    }
+    // Middle Row
+    if ((Loadout.middleLeft.type == Loadout.middleMiddle.type) && (Loadout.middleLeft.type == Loadout.middleRight.type)) {
+        buffs[Loadout.middleLeft.type] = buffs[Loadout.middleLeft.type] + 1;
+    }
+    // Bottom Row
+    if ((Loadout.bottomLeft.type == Loadout.bottomMiddle.type) && (Loadout.bottomLeft.type == Loadout.bottomRight.type)) {
+        buffs[Loadout.bottomLeft.type] = buffs[Loadout.bottomLeft.type] + 1;
+    }
+    // Left Column
+    if ((Loadout.topLeft.type == Loadout.middleLeft.type) && (Loadout.topLeft.type == Loadout.bottomLeft.type)) {
+        buffs[Loadout.topLeft.type] = buffs[Loadout.topLeft.type] + 1;
+    }
+    // Middle Column
+    if ((Loadout.topMiddle.type == Loadout.middleMiddle.type) && (Loadout.topMiddle.type == Loadout.bottomMiddle.type)) {
+        buffs[Loadout.topMiddle.type] = buffs[Loadout.topMiddle.type] + 1;
+    }
+    // Right Column
+    if ((Loadout.topRight.type == Loadout.middleRight.type) && (Loadout.topRight.type == Loadout.bottomRight.type)) {
+        buffs[Loadout.topRight.type] = buffs[Loadout.topRight.type] + 1;
+    }
+    // Diagonal top left to bottom right
+    if ((Loadout.topLeft.type == Loadout.middleMiddle.type) && (Loadout.topLeft.type == Loadout.bottomRight.type)) {
+        buffs[Loadout.topLeft.type] = buffs[Loadout.topLeft.type] + 1;
+    }
+    // Diagonal bottom left to top right
+    if ((Loadout.bottomLeft.type == Loadout.middleMiddle.type) && (Loadout.bottomLeft.type == Loadout.topRight.type)) {
+        buffs[Loadout.bottomLeft.type] = buffs[Loadout.bottomLeft.type] + 1;
+    }
+
+    return buffs;
+}
+
+window.addEventListener("load", function () {
     displayLoadouts(GeneLoadouts);
 })
