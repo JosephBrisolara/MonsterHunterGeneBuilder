@@ -99,8 +99,7 @@ function saveLoadout() {
     // Signal that the new loadout has been added
     document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
 
-    sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
-    console.log(sessionStorage.getItem("Loadouts"));
+    sessionStorage.setItem(newLoadout.monsterName, JSON.stringify(Loadouts));
 }
 
 function searchGenes() {
