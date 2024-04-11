@@ -6,8 +6,6 @@ window.addEventListener("load", function () {
 });
 
 function search() {
-        console.log("Testing");
-    
         // Get all of the values from the input fields
         const geneName = document.getElementById("searchGeneName");
         const skill = document.getElementById("searchSkillName");
@@ -25,11 +23,31 @@ function search() {
         const xl = document.getElementById("XL");
     
         // Search for genes and output their gene cards
-        const finalGenes = [];
-    
-        for(let i = 0; i < finalGenes.length; i++) {
-            generateGeneCard(finalGenes[i], "searchItems")
-        }
+        results = genes.filter(function() {
+            for(let i = 0; i < genes.length; i++) {
+                const geneNameBool = (genes[i].name.includes(geneName.trim()) || (geneName.trim() == ''));
+                const skillNameBool = (genes[i].skillName.includes(skill.trim()) || (skill.trim() == ''));
+                const fireBool = ((genes[i].element == fire.value) && (fire.checked));
+                const waterBool = ((genes[i].element == water.value) && (water.checked));
+                const iceBool = ((genes[i].element == ice.value) && (ice.checked));
+                const thunderBool = ((genes[i].element == thunder.value) && (thunder.checked));
+                const dragonBool = ((genes[i].element == dragon.value) && (dragon.checked));
+                const powerBool = ((genes[i].type == power.value) && (power.checked));
+                const technicalBool = ((genes[i].type == technical.value) && (technical.checked));
+                const speedBool = ((genes[i].type == speed.value) && (speed.checked));
+                const smallBool = ((genes[i].size == small.value) && (small.checked));
+                const mediumBool = ((genes[i].size == medium.value) && (medium.checked));
+                const largeBool = ((genes[i].size == large.value) && (large.checked));
+                const xlBool = ((genes[i].size == xl.value) && (xl.checked));
+                const checkboxBool = fireBool || waterBool || iceBool || thunderBool || dragonBool || powerBool || technicalBool || speedBool || smallBool || mediumBool || largeBool || xlBool;
+                if (!checkboxBool) {
+                    return (geneNameBool && skillNameBool)
+                }
+                else {
+                    return (geneNameBool && skillNameBool) && (fireBool || waterBool || iceBool || thunderBool || dragonBool || powerBool || technicalBool || speedBool || smallBool || mediumBool || largeBool || xlBool || empty);
+                }
+            }
+        })
     
         // Clear all of the fields
         geneName.value = " ";
