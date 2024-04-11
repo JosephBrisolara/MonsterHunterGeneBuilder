@@ -76,18 +76,8 @@ function generateGeneCard(gene, parentID) {
     document.getElementById(parentID).appendChild(p);
 }
 
-function saveLoadout() {
-    // Getting all of the genes from in the grids
-    topLeft = document.getElementById("topLeft").firstChild.value;
-    topMiddle = document.getElementById("topMiddle").firstChild.value;
-    topRight = document.getElementById("topRight").firstChild.value;
-    middleLeft = document.getElementById("middleLeft").firstChild.value;
-    middleMiddle = document.getElementById("middleMiddle").firstChild.value;
-    middleRight = document.getElementById("middleRight").firstChild.value;
-    bottomLeft = document.getElementById("bottomLeft").firstChild.value;
-    bottomMiddle = document.getElementById("bottomMiddle").firstChild.value;
-    bottomRight = document.getElementById("bottomRight").firstChild.value;
 
+<<<<<<< HEAD
     // Getting the input name
     loadoutName = document.getElementById("loadoutName").value;
 
@@ -133,6 +123,8 @@ function searchSkills() {
         }
     }
 }
+=======
+>>>>>>> searchFeature
 
 // window.addEventListener("load", function () {
 //     // Adding all genes in GeneArray to geneList

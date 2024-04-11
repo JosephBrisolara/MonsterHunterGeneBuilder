@@ -29,29 +29,7 @@ window.addEventListener("load", function () {
         }
     });
 
-    // Add the ability to drag within the searched genes
-    Sortable.create(searchedGenes, {
-        group: {
-            name: "genes",
-            put: false
-        },
-        animation: 100,
-        scroll: true,
-        forceAutoScrollFallback: true,
-        scrollSpeed: 30
-    })
 
-    // Add the ability to drag within the searched skills
-    Sortable.create(searchedSkills, {
-        group: {
-            name: "genes",
-            put: false
-        },
-        animation: 100,
-        scroll: true,
-        forceAutoScrollFallback: true,
-        scrollSpeed: 30
-    })
 
     // Allow the genes to be put into the gene grid containers
     gridItemArray = document.getElementsByClassName('gridItem');
