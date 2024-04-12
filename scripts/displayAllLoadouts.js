@@ -159,12 +159,13 @@ function bingoBuffs(Loadout) {
 
 function styleBingoBuffs(buffs, parentNode) {
     const buffTable = document.createElement("div");
+    buffTable.setAttribute("class", "buffTable");
     for (const [key, value] of Object.entries(buffs)) {
         const buffTableEntry = document.createElement("div");
         buffTableEntry.setAttribute("class", "buffTableEntry");
 
         const keyDiv = document.createElement("div");
-        keyDiv.setAttribute("class", "buffTablekey");
+        keyDiv.setAttribute("class", "buffTableKey");
         keyDiv.innerText = key;
         buffTableEntry.appendChild(keyDiv);
 

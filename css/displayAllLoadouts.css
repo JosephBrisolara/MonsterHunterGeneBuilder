@@ -1,13 +1,15 @@
 .LoadoutCard {
     background-color: blueviolet;
     margin: 10px;
+    padding: 10px;
     border: solid green 3px;
     border-radius: 5px;
 }
 
 .LoadoutLabel {
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
+    margin: 5px;
 }
 
 .LoadoutGrid {
@@ -32,4 +34,29 @@
     display: grid;
     grid-template-columns: auto auto;
     gap: 15px;
+}
+
+.buffTable {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    margin: 10px;
+}
+
+.buffTableEntry {
+    display: inline;
+    border: lightblue solid 2px;
+    margin: 5px;
+}
+
+.buffTableKey {
+    display: inline;
+    margin: 0px;
+    padding: 3px;
+}
+
+.buffTableValue {
+    display: inline;
+    margin: 0px;
+    padding: 3px;
 }
