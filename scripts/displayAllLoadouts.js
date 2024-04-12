@@ -1,8 +1,12 @@
+window.addEventListener("load", function () {
+    displayLoadouts();
+})
+
 function createLoadoutCard(loadout, parentID) {
-    if(typeof loadout === 'string') {
+    if (typeof loadout === 'string') {
         loadout = JSON.parse(loadout);
     }
-    
+
     // Create the card
     const c = document.createElement("div");
     c.value = loadout;
@@ -14,6 +18,7 @@ function createLoadoutCard(loadout, parentID) {
     // Adding the Loadout Name to the Loadout Card
     const t = document.createElement('p');
     t.innerText = loadout.monsterName;
+    t.setAttribute("class", "LoadoutLabel");
     c.appendChild(t);
 
     // Creating elements for the genes in the grid
@@ -56,15 +61,14 @@ function createLoadoutCard(loadout, parentID) {
     c.appendChild(g);
 
     const buffs = bingoBuffs(loadout);
-    const b = document.createElement("div");
-    b.innerText = JSON.stringify(buffs);
-    c.appendChild(b);
+    // Style the buffs and also append to c
+    const buffstring = styleBingoBuffs(buffs, c);
 }
 
 function displayLoadouts() {
     for (let i = 0; i < sessionStorage.length; i++) {
         const loadoutString = sessionStorage.getItem(sessionStorage.key(i));
-        if(loadoutString == "true") {
+        if (loadoutString == "true") {
             continue;
         }
         createLoadoutCard(JSON.parse(loadoutString), "displayAllLoadouts");
@@ -152,6 +156,24 @@ function bingoBuffs(Loadout) {
     return buffs;
 }
 
-window.addEventListener("load", function () {
-    displayLoadouts();
-})
+
+function styleBingoBuffs(buffs, parentNode) {
+    const buffTable = document.createElement("div");
+    for (const [key, value] of Object.entries(buffs)) {
+        const buffTableEntry = document.createElement("div");
+        buffTableEntry.setAttribute("class", "buffTableEntry");
+
+        const keyDiv = document.createElement("div");
+        keyDiv.setAttribute("class", "buffTablekey");
+        keyDiv.innerText = key;
+        buffTableEntry.appendChild(keyDiv);
+
+        const valueDiv = document.createElement("div");
+        valueDiv.setAttribute("class", "buffTableValue");
+        valueDiv.innerText = value;
+        buffTableEntry.appendChild(valueDiv);
+
+        buffTable.appendChild(buffTableEntry);
+    }
+    parentNode.appendChild(buffTable);
+}
