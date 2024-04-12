@@ -76,7 +76,7 @@ function displayLoadouts() {
 }
 
 // Pass in a Loadout and return json with the bingo buffs
-function bingoBuffs(Loadout) {
+function bingoBuffs(loadout) {
     buffs = {
         "Non-Elem": 0,
         "Fire": 0,
@@ -89,69 +89,69 @@ function bingoBuffs(Loadout) {
     }
     // Check for Elements
     // Top Row
-    if ((Loadout.topLeft.element == Loadout.topMiddle.element) && (Loadout.topLeft.element == Loadout.topRight.element)) {
-        buffs[Loadout.topLeft.element] = buffs[Loadout.topLeft.element] + 1;
+    if ((loadout.topLeft.element == loadout.topMiddle.element) && (loadout.topLeft.element == loadout.topRight.element)) {
+        buffs[loadout.topLeft.element] = buffs[loadout.topLeft.element] + 1;
     }
     // Middle Row
-    if ((Loadout.middleLeft.element == Loadout.middleMiddle.element) && (Loadout.middleLeft.element == Loadout.middleRight.element)) {
-        buffs[Loadout.middleLeft.element] = buffs[Loadout.middleLeft.element] + 1;
+    if ((loadout.middleLeft.element == loadout.middleMiddle.element) && (loadout.middleLeft.element == loadout.middleRight.element)) {
+        buffs[loadout.middleLeft.element] = buffs[loadout.middleLeft.element] + 1;
     }
     // Bottom Row
-    if ((Loadout.bottomLeft.element == Loadout.bottomMiddle.element) && (Loadout.bottomLeft.element == Loadout.bottomRight.element)) {
-        buffs[Loadout.bottomLeft.element] = buffs[Loadout.bottomLeft.element] + 1;
+    if ((loadout.bottomLeft.element == loadout.bottomMiddle.element) && (loadout.bottomLeft.element == loadout.bottomRight.element)) {
+        buffs[loadout.bottomLeft.element] = buffs[loadout.bottomLeft.element] + 1;
     }
     // Left Column
-    if ((Loadout.topLeft.element == Loadout.middleLeft.element) && (Loadout.topLeft.element == Loadout.bottomLeft.element)) {
-        buffs[Loadout.topLeft.element] = buffs[Loadout.topLeft.element] + 1;
+    if ((loadout.topLeft.element == loadout.middleLeft.element) && (loadout.topLeft.element == loadout.bottomLeft.element)) {
+        buffs[loadout.topLeft.element] = buffs[loadout.topLeft.element] + 1;
     }
     // Middle Column
-    if ((Loadout.topMiddle.element == Loadout.middleMiddle.element) && (Loadout.topMiddle.element == Loadout.bottomMiddle.element)) {
-        buffs[Loadout.topMiddle.element] = buffs[Loadout.topMiddle.element] + 1;
+    if ((loadout.topMiddle.element == loadout.middleMiddle.element) && (loadout.topMiddle.element == loadout.bottomMiddle.element)) {
+        buffs[loadout.topMiddle.element] = buffs[loadout.topMiddle.element] + 1;
     }
     // Right Column
-    if ((Loadout.topRight.element == Loadout.middleRight.element) && (Loadout.topRight.element == Loadout.bottomRight.element)) {
-        buffs[Loadout.topRight.element] = buffs[Loadout.topRight.element] + 1;
+    if ((loadout.topRight.element == loadout.middleRight.element) && (loadout.topRight.element == loadout.bottomRight.element)) {
+        buffs[loadout.topRight.element] = buffs[loadout.topRight.element] + 1;
     }
     // Diagonal top left to bottom right
-    if ((Loadout.topLeft.element == Loadout.middleMiddle.element) && (Loadout.topLeft.element == Loadout.bottomRight.element)) {
-        buffs[Loadout.topLeft.element] = buffs[Loadout.topLeft.element] + 1;
+    if ((loadout.topLeft.element == loadout.middleMiddle.element) && (loadout.topLeft.element == loadout.bottomRight.element)) {
+        buffs[loadout.topLeft.element] = buffs[loadout.topLeft.element] + 1;
     }
     // Diagonal bottom left to top right
-    if ((Loadout.bottomLeft.element == Loadout.middleMiddle.element) && (Loadout.bottomLeft.element == Loadout.topRight.element)) {
-        buffs[Loadout.bottomLeft.element] = buffs[Loadout.bottomLeft.element] + 1;
+    if ((loadout.bottomLeft.element == loadout.middleMiddle.element) && (loadout.bottomLeft.element == loadout.topRight.element)) {
+        buffs[loadout.bottomLeft.element] = buffs[loadout.bottomLeft.element] + 1;
     }
 
     // Check for Types
-    if ((Loadout.topLeft.type == Loadout.topMiddle.type) && (Loadout.topLeft.type == Loadout.topRight.type)) {
-        buffs[Loadout.topLeft.type] = buffs[Loadout.topLeft.type] + 1;
+    if ((loadout.topLeft.type == loadout.topMiddle.type) && (loadout.topLeft.type == loadout.topRight.type)) {
+        buffs[loadout.topLeft.type] = buffs[loadout.topLeft.type] + 1;
     }
     // Middle Row
-    if ((Loadout.middleLeft.type == Loadout.middleMiddle.type) && (Loadout.middleLeft.type == Loadout.middleRight.type)) {
-        buffs[Loadout.middleLeft.type] = buffs[Loadout.middleLeft.type] + 1;
+    if ((loadout.middleLeft.type == loadout.middleMiddle.type) && (loadout.middleLeft.type == loadout.middleRight.type)) {
+        buffs[loadout.middleLeft.type] = buffs[loadout.middleLeft.type] + 1;
     }
     // Bottom Row
-    if ((Loadout.bottomLeft.type == Loadout.bottomMiddle.type) && (Loadout.bottomLeft.type == Loadout.bottomRight.type)) {
-        buffs[Loadout.bottomLeft.type] = buffs[Loadout.bottomLeft.type] + 1;
+    if ((loadout.bottomLeft.type == loadout.bottomMiddle.type) && (loadout.bottomLeft.type == loadout.bottomRight.type)) {
+        buffs[loadout.bottomLeft.type] = buffs[loadout.bottomLeft.type] + 1;
     }
     // Left Column
-    if ((Loadout.topLeft.type == Loadout.middleLeft.type) && (Loadout.topLeft.type == Loadout.bottomLeft.type)) {
-        buffs[Loadout.topLeft.type] = buffs[Loadout.topLeft.type] + 1;
+    if ((loadout.topLeft.type == loadout.middleLeft.type) && (loadout.topLeft.type == loadout.bottomLeft.type)) {
+        buffs[loadout.topLeft.type] = buffs[loadout.topLeft.type] + 1;
     }
     // Middle Column
-    if ((Loadout.topMiddle.type == Loadout.middleMiddle.type) && (Loadout.topMiddle.type == Loadout.bottomMiddle.type)) {
-        buffs[Loadout.topMiddle.type] = buffs[Loadout.topMiddle.type] + 1;
+    if ((loadout.topMiddle.type == loadout.middleMiddle.type) && (loadout.topMiddle.type == loadout.bottomMiddle.type)) {
+        buffs[loadout.topMiddle.type] = buffs[loadout.topMiddle.type] + 1;
     }
     // Right Column
-    if ((Loadout.topRight.type == Loadout.middleRight.type) && (Loadout.topRight.type == Loadout.bottomRight.type)) {
-        buffs[Loadout.topRight.type] = buffs[Loadout.topRight.type] + 1;
+    if ((loadout.topRight.type == loadout.middleRight.type) && (loadout.topRight.type == loadout.bottomRight.type)) {
+        buffs[loadout.topRight.type] = buffs[loadout.topRight.type] + 1;
     }
     // Diagonal top left to bottom right
-    if ((Loadout.topLeft.type == Loadout.middleMiddle.type) && (Loadout.topLeft.type == Loadout.bottomRight.type)) {
-        buffs[Loadout.topLeft.type] = buffs[Loadout.topLeft.type] + 1;
+    if ((loadout.topLeft.type == loadout.middleMiddle.type) && (loadout.topLeft.type == loadout.bottomRight.type)) {
+        buffs[loadout.topLeft.type] = buffs[loadout.topLeft.type] + 1;
     }
     // Diagonal bottom left to top right
-    if ((Loadout.bottomLeft.type == Loadout.middleMiddle.type) && (Loadout.bottomLeft.type == Loadout.topRight.type)) {
-        buffs[Loadout.bottomLeft.type] = buffs[Loadout.bottomLeft.type] + 1;
+    if ((loadout.bottomLeft.type == loadout.middleMiddle.type) && (loadout.bottomLeft.type == loadout.topRight.type)) {
+        buffs[loadout.bottomLeft.type] = buffs[loadout.bottomLeft.type] + 1;
     }
     return buffs;
 }
