@@ -64,7 +64,13 @@ function search() {
         })
 
         // Generate Gene Cards to geneList
-
+        // Start by emptying geneList
+        const geneList = document.getElementById("geneList");
+        geneList.innerHTML = '';
+        // add the cards
+        for (let i = 0; i < results.length; i++) {
+            generateGeneCard(results[i], "geneList");
+        }
 
         // Clear all of the fields
         geneName.value = " ";
