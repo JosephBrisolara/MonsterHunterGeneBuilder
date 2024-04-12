@@ -118,16 +118,19 @@ function saveLoadout() {
 }
 
 function saveRandomLoadout() {
+    // save max value
+    const max = genes.length;
+
     // Getting all of the genes from in the grids
-    topLeft = genes[32];
-    topMiddle = genes[24];
-    topRight = genes[3];
-    middleLeft = genes[284];
-    middleMiddle = genes[34];
-    middleRight = genes[16];
-    bottomLeft = genes[8];
-    bottomMiddle = genes[75];
-    bottomRight = genes[57];
+    topLeft = genes[Math.floor(Math.random() * max)];
+    topMiddle = genes[Math.floor(Math.random() * max)];
+    topRight = genes[Math.floor(Math.random() * max)];
+    middleLeft = genes[Math.floor(Math.random() * max)];
+    middleMiddle = genes[Math.floor(Math.random() * max)];
+    middleRight = genes[Math.floor(Math.random() * max)];
+    bottomLeft = genes[Math.floor(Math.random() * max)];
+    bottomMiddle = genes[Math.floor(Math.random() * max)];
+    bottomRight = genes[Math.floor(Math.random() * max)];
 
     // Getting the input name
     loadoutName = document.getElementById("loadoutName").value;
