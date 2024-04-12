@@ -110,7 +110,7 @@ function saveLoadout() {
     // Signal that the new loadout has been added
     document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
     // Add to sessionStorage
-    sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
+    sessionStorage.setItem(newLoadout.monsterName, JSON.stringify(newLoadout));
 }
 
 function saveRandomLoadout() {
