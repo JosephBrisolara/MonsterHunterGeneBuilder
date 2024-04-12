@@ -105,16 +105,12 @@ function saveLoadout() {
     // Getting the input name
     loadoutName = document.getElementById("loadoutName").value;
 
-    // Creating a loadout and add to array
+    // Creating a loadout
     newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
-    Loadouts.push(newLoadout);
-
-    console.log(Loadouts);
     // Signal that the new loadout has been added
     document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
-
+    // Add to sessionStorage
     sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
-    console.log(sessionStorage.getItem("Loadouts"));
 }
 
 function saveRandomLoadout() {
@@ -135,12 +131,10 @@ function saveRandomLoadout() {
     // Getting the input name
     loadoutName = document.getElementById("loadoutName").value;
 
-    // Creating a loadout and add to array
+    // Creating a loadout
     newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
-    Loadouts.push(newLoadout);
-
     // Signal that the new loadout has been added
     document.getElementById("loadoutList").innerText = "You have added the new loadout for: " + newLoadout.monsterName;
-
+    // Add to sessionStorage
     sessionStorage.setItem(newLoadout.monsterName, JSON.stringify(newLoadout));
 }

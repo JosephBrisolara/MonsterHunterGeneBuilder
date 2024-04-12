@@ -1,11 +1,11 @@
-function createLoadoutCard(Loadout, parentID) {
-    if(typeof Loadout === 'string') {
-        Loadout = JSON.parse(Loadout);
+function createLoadoutCard(loadout, parentID) {
+    if(typeof loadout === 'string') {
+        loadout = JSON.parse(loadout);
     }
     
     // Create the card
     const c = document.createElement("div");
-    c.value = Loadout;
+    c.value = loadout;
     c.setAttribute("class", "LoadoutCard")
 
     // Appending the Gene Card to the c specified
@@ -13,7 +13,7 @@ function createLoadoutCard(Loadout, parentID) {
 
     // Adding the Loadout Name to the Loadout Card
     const t = document.createElement('p');
-    t.innerText = Loadout.monsterName;
+    t.innerText = loadout.monsterName;
     c.appendChild(t);
 
     // Creating elements for the genes in the grid
@@ -31,15 +31,15 @@ function createLoadoutCard(Loadout, parentID) {
     const LR = document.createElement("p");
 
     // Adding the text to the elements
-    UL.innerText = Loadout.topLeft.skillName;
-    UM.innerText = Loadout.topMiddle.skillName;
-    UR.innerText = Loadout.topRight.skillName;
-    ML.innerText = Loadout.middleLeft.skillName;
-    MM.innerText = Loadout.middleMiddle.skillName;
-    MR.innerText = Loadout.middleRight.skillName;
-    LL.innerText = Loadout.bottomLeft.skillName;
-    LM.innerText = Loadout.bottomMiddle.skillName;
-    LR.innerText = Loadout.bottomRight.skillName;
+    UL.innerText = loadout.topLeft.skillName;
+    UM.innerText = loadout.topMiddle.skillName;
+    UR.innerText = loadout.topRight.skillName;
+    ML.innerText = loadout.middleLeft.skillName;
+    MM.innerText = loadout.middleMiddle.skillName;
+    MR.innerText = loadout.middleRight.skillName;
+    LL.innerText = loadout.bottomLeft.skillName;
+    LM.innerText = loadout.bottomMiddle.skillName;
+    LR.innerText = loadout.bottomRight.skillName;
 
     // Adding the genes to the c
     g.appendChild(UL);
@@ -55,21 +55,18 @@ function createLoadoutCard(Loadout, parentID) {
     // Attach LoadoutGrid to LoadoutCard
     c.appendChild(g);
 
-    const buffs = bingoBuffs(Loadout);
+    const buffs = bingoBuffs(loadout);
     const b = document.createElement("div");
     b.innerText = JSON.stringify(buffs);
     c.appendChild(b);
-
 }
 
 function displayLoadouts() {
     for (let i = 0; i < sessionStorage.length; i++) {
-        console.log("Create loadout");
         const loadoutString = sessionStorage.getItem(sessionStorage.key(i));
         if(loadoutString == "true") {
             continue;
         }
-        console.log(loadoutString);
         createLoadoutCard(JSON.parse(loadoutString), "displayAllLoadouts");
     }
 }
