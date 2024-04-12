@@ -23,10 +23,7 @@ function search() {
         const large = document.getElementById("large");
         const xl = document.getElementById("XL");
     
-
-        console.log("Searching...");
-
-        // Search for genes and output their gene cards
+        // Search for genes and output their genes to results
         const results = genes.filter((gene) => {
             const geneNameBool = (gene.name.includes(geneName.value.trim()) || (geneName.value.trim() == ''));
             const skillNameBool = (gene.skillName.includes(skill.value.trim()) || (skill.value.trim() == ''));
@@ -49,20 +46,26 @@ function search() {
             const mediumBool = ((geneSize == medium.value) && (medium.checked));
             const largeBool = ((geneSize == large.value) && (large.checked));
             const xlBool = ((geneSize == xl.value) && (xl.checked));
-            
-            const checkboxBool = fireBool || waterBool || iceBool || thunderBool || dragonBool || nonElemBool || powerBool || technicalBool || speedBool || smallBool || mediumBool || largeBool || xlBool;
-            if (!checkboxBool) {
-                // This works
+
+            // No element checked on form
+            const elementBool = ((fire.checked == false) && (water.checked == false) && (ice.checked == false) && (thunder.checked == false) && (dragon.checked == false) && (nonElem.checked == false));
+            // No type checked on form
+            const typeBool = ((power.checked == false) && (technical.checked == false) && (speed.checked == false));
+            // No size checked on form
+            const sizeBool = ((small.checked == false) && (medium.checked == false) && (large.checked == false) && (xl.checked == false));
+            // No checkboxes filled on form
+            const checkboxBool = elementBool && typeBool && sizeBool;
+
+            if (checkboxBool) {
                 return (geneNameBool && skillNameBool);
-            }
-            else {
-                // This is the problem
-                return (geneNameBool && skillNameBool && checkboxBool);
+            } else {
+                return geneNameBool && skillNameBool && (fireBool || waterBool || iceBool || thunderBool || dragonBool || nonElemBool || elementBool) && (powerBool || technicalBool || speedBool || typeBool) && (smallBool || mediumBool || largeBool || xlBool || sizeBool)
             }
         })
-        console.log(results);
-        console.log("Done Searching");
-    
+
+        // Generate Gene Cards to geneList
+
+
         // Clear all of the fields
         geneName.value = " ";
         skill.value = " ";
