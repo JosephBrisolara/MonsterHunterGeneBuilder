@@ -1,4 +1,9 @@
 # The .vscode folder and all files inside
 .vscode
+<<<<<<< HEAD
 
 !.gitignore
+=======
+node_modules
+!.gitignore
+>>>>>>> development

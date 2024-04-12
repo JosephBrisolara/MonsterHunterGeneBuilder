@@ -1,0 +1,26 @@
+nav {
+    background-color: blueviolet;
+}
+
+nav ul {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 10px;
+    list-style-type: none;
+    padding-inline-start: 0px;
+    padding: 10px;
+    background-color: #92b6d5;
+}
+
+nav ul li {
+    font-size: 25px;
+    border: solid red 2px;
+    background-color: #af9483;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}

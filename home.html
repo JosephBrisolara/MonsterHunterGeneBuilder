@@ -1,43 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <title>Home</title>
 
-    <link rel="stylesheet" href="css/main.css">
+    <!-- Sortable js library -->
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
 
     <script src="scripts/geneClass.js"></script>
-    <script src="scripts/dnd.js"></script>
+    <script src="scripts/sortable.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/generalScripts.js"></script>
+    <script src="scripts/home.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/generalStyles.css">
 </head>
 
 <body>
+    <nav>
+        <ul id="navigation-links">
+            <li><a href="home.html">Gene Builder</a></li>
+            <li><a href="displayAllGenes.html">Genes</a></li>
+            <li><a href="displayAllLoadouts.html">Loadouts</a></li>
+        </ul>
+    </nav>
+
+    <h1>Monster Hunter Gene Builder</h1>
     <main>
-        <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
-        <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
+        <div id="mainContainer">
+            <div id="mainLeftColumn">
+                <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
+                <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
+                <button id="randomLoadout" onclick="saveRandomLoadout()">Random Loadout</button><br>
 
-        <div id="geneGrid">
-            <div id="topLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="topMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="topRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="middleLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="middleMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="middleRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="bottomLeft" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="bottomMiddle" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="bottomRight" class="gridItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+                <div id="geneGrid" class="geneGrid">
+                    <div id="topLeft" class="gridItem"></div>
+                    <div id="topMiddle" class="gridItem"></div>
+                    <div id="topRight" class="gridItem"></div>
+                    <div id="middleLeft" class="gridItem"></div>
+                    <div id="middleMiddle" class="gridItem"></div>
+                    <div id="middleRight" class="gridItem"></div>
+                    <div id="bottomLeft" class="gridItem"></div>
+                    <div id="bottomMiddle" class="gridItem"></div>
+                    <div id="bottomRight" class="gridItem"></div>
+                </div>
+                <div id="loadoutList"></div>
+                <br>
+
+                <form id="searchItems">
+                    <fieldset>
+                        <legend>Name Search</legend>
+                        <label for="searchGeneName">Search Gene Name</label><br>
+                        <input type="text" id="searchGeneName" name="searchGeneName"><br>
+                        <label for="searchSkillName">Search Skill Name</label><br>
+                        <input type="text" id="searchSkillName" name="searchSkillName"><br>
+                    </fieldset>
+                    <!-- For elements -->
+                    <fieldset>
+                        <legend>Elements</legend>
+                        <input type="checkbox" id="fire" name="fire" value="Fire">
+                        <label for="fire">Fire</label><br>
+                        <input type="checkbox" id="water" name="water" value="Water">
+                        <label for="water">Water</label><br>
+                        <input type="checkbox" id="ice" name="ice" value="Ice">
+                        <label for="ice">Ice</label><br>
+                        <input type="checkbox" id="thunder" name="thuner" value="Thunder">
+                        <label for="thunder">Thunder</label><br>
+                        <input type="checkbox" id="dragon" name="dragon" value="Dragon">
+                        <label for="dragon">Dragon</label><br>
+                        <input type="checkbox" id="nonElem" name="nonElem" value="Non-Elem">
+                        <label for="nonElem">Non-Elem</label>
+                    </fieldset>
+                    <!-- For Types -->
+                    <fieldset>
+                        <legend>Types</legend>
+                        <input type="checkbox" id="power" name="power" value="Power Type">
+                        <label for="power">Power</label><br>
+                        <input type="checkbox" id="technical" name="technical" value="Technical Type">
+                        <label for="technical">Technical</label><br>
+                        <input type="checkbox" id="speed" name="speed" value="Speed Type">
+                        <label for="speed">Speed</label><br>
+                    </fieldset>
+
+                    <!-- For Gene Size -->
+                    <fieldset>
+                        <legend>Gene Size</legend>
+                        <input type="checkbox" id="small" name="small" value="1">
+                        <label for="small">S</label><br>
+                        <input type="checkbox" id="medium" name="medium" value="2">
+                        <label for="medium">M</label><br>
+                        <input type="checkbox" id="large" name="large" value="3">
+                        <label for="large">L</label><br>
+                        <input type="checkbox" id="XL" name="XL" value="4">
+                        <label for="XL">XL</label><br>
+                    </fieldset>
+                    <!-- Submit Button -->
+                    <fieldset>
+                        <button type="button" id="searchButton" onclick="search()">Search</button>
+                    </fieldset>
+
+                </form>
+                <div id="searchitems"></div>
+                <!-- <div id="searchItems">
+                <div>
+                    <h2>Gene Name Search</h2>
+                    <input type="search" id="geneSearch" name="q" placeholder="Search Gene Name..." size="30">
+                    <button id="searchButton" onclick="searchGenes()">Search</button>
+                    <br>
+                    <div id="searchedGenes"></div>
+                </div>
+                <div>
+                    <h2>Skill Name Search</h2>
+                    <input type="search" id="skillSearch" name="q" placeholder="Search Skill Name..." size="30">
+                    <button id="searchButton" onclick="searchSkills()">Search</button>
+                    <br>
+                    <div id="searchedSkills"></div>
+                </div>
+            </div> -->
+            </div>
+
+            <div id="mainRightColumn">
+                <h2 id="geneListTitle">Gene List</h2>
+                <div id="geneList" class="geneListItems"></div>
+            </div>
         </div>
-
-        <div id="loadoutList"></div>
-
-        <br>
-        <input type="search" id="geneSearch" name="q" placeholder="Search Gene Name..." size="30">
-        <button id="searchButton" onclick="searchGenes()">Search</button>
-        <br>
-        <div id="searchedGenes"></div>
-        <br>
-        <div id="geneList" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
     </main>
 </body>
 
