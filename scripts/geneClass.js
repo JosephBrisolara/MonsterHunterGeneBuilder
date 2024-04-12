@@ -28,11 +28,7 @@ class Loadout {
 // Create an empty array for the loadouts
 let Loadouts = [];
 
-<<<<<<< HEAD
-
-=======
 // Create the Gene Card that is generated in gene list
->>>>>>> development
 function generateGeneCard(gene, parentID) {
     // Create the card
     const p = document.createElement("div");
@@ -78,54 +74,4 @@ function generateGeneCard(gene, parentID) {
 
     // Appending the Gene Card to the container specified
     document.getElementById(parentID).appendChild(p);
-<<<<<<< HEAD
 }
-
-function saveLoadout() {
-    // Getting all of the genes in the grids
-    topLeft = document.getElementById("topLeft").firstChild.value;
-    topMiddle = document.getElementById("topMiddle").firstChild.value;
-    topRight = document.getElementById("topRight").firstChild.value;
-    middleLeft = document.getElementById("middleLeft").firstChild.value;
-    middleMiddle = document.getElementById("middleMiddle").firstChild.value;
-    middleRight = document.getElementById("middleRight").firstChild.value;
-    bottomLeft = document.getElementById("bottomLeft").firstChild.value;
-    bottomMiddle = document.getElementById("bottomMiddle").firstChild.value;
-    bottomRight = document.getElementById("bottomRight").firstChild.value;
-
-    // Getting the input name
-    loadoutName = document.getElementById("loadoutName").value;
-
-    // Creating a loadout and add to array
-    newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
-    Loadouts.push(newLoadout);
-
-    // Adding the new loadout to the loadoutList to display
-    loadoutString = `${loadoutName}: ${topLeft.name}, ${topMiddle.name}... Other loadout information here`;
-    document.getElementById("loadoutList").innerText += '\n' + loadoutString;
-}
-
-function searchGenes() {
-    // Get the string from the search bar
-    geneNameInput = document.getElementById("geneSearch").value;
-    const regex = new RegExp(geneNameInput)
-
-    // Empty the Container to Prepare to add GeneCards
-    document.getElementById("searchedGenes").innerHTML = null;
-
-    // Use regex to compare the string to all gene names in the gene array
-    for (let i = 0; i < GeneArray.length; i++) {
-        if (regex.test(GeneArray[i].name)) {
-            generateGeneCard(GeneArray[i], "searchedGenes")
-        }
-    }
-}
-
-window.addEventListener("load", function () {
-    // Adding all genes in GeneArray to geneList
-    for (let i = 0; i < GeneArray.length; i++)
-        generateGeneCard(GeneArray[i], "geneList");
-});
-=======
-}
->>>>>>> development
