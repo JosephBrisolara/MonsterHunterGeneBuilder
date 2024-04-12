@@ -1,4 +1,5 @@
 # The .vscode folder and all files inside
 .vscode
-node_modules/
+
+node_modules
 !.gitignore
