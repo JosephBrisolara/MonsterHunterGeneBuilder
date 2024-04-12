@@ -29,81 +29,82 @@
 
     <h1>Monster Hunter Gene Builder</h1>
     <main>
-        <div id="mainLeftColumn">
-            <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
-            <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
-            <button id="randomLoadout" onclick="saveRandomLoadout()">Random Loadout</button><br>
+        <div id="mainContainer">
+            <div id="mainLeftColumn">
+                <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
+                <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
+                <button id="randomLoadout" onclick="saveRandomLoadout()">Random Loadout</button><br>
 
 
-            <div id="geneGrid" class="geneGrid">
-                <div id="topLeft" class="gridItem"></div>
-                <div id="topMiddle" class="gridItem"></div>
-                <div id="topRight" class="gridItem"></div>
-                <div id="middleLeft" class="gridItem"></div>
-                <div id="middleMiddle" class="gridItem"></div>
-                <div id="middleRight" class="gridItem"></div>
-                <div id="bottomLeft" class="gridItem"></div>
-                <div id="bottomMiddle" class="gridItem"></div>
-                <div id="bottomRight" class="gridItem"></div>
-            </div>
-            <div id="loadoutList"></div>
-            <br>
+                <div id="geneGrid" class="geneGrid">
+                    <div id="topLeft" class="gridItem"></div>
+                    <div id="topMiddle" class="gridItem"></div>
+                    <div id="topRight" class="gridItem"></div>
+                    <div id="middleLeft" class="gridItem"></div>
+                    <div id="middleMiddle" class="gridItem"></div>
+                    <div id="middleRight" class="gridItem"></div>
+                    <div id="bottomLeft" class="gridItem"></div>
+                    <div id="bottomMiddle" class="gridItem"></div>
+                    <div id="bottomRight" class="gridItem"></div>
+                </div>
+                <div id="loadoutList"></div>
+                <br>
 
-            <form id="searchItems">
-                <fieldset>
-                    <legend>Name Search</legend>
-                    <label for="searchGeneName">Search Gene Name</label><br>
-                    <input type="text" id="searchGeneName" name="searchGeneName"><br>
-                    <label for="searchSkillName">Search Skill Name</label><br>
-                    <input type="text" id="searchSkillName" name="searchSkillName"><br>
-                </fieldset>
-                <!-- For elements -->
-                <fieldset>
-                    <legend>Elements</legend>
-                    <input type="checkbox" id="fire" name="fire" value="Fire">
-                    <label for="fire">Fire</label><br>
-                    <input type="checkbox" id="water" name="water" value="Water">
-                    <label for="water">Water</label><br>
-                    <input type="checkbox" id="ice" name="ice" value="Ice">
-                    <label for="ice">Ice</label><br>
-                    <input type="checkbox" id="thunder" name="thuner" value="Thunder">
-                    <label for="thunder">Thunder</label><br>
-                    <input type="checkbox" id="dragon" name="dragon" value="Dragon">
-                    <label for="dragon">Dragon</label><br>
-                    <input type="checkbox" id="nonElem" name="nonElem" value="Non-Elem">
-                    <label for="nonElem">Non-Elem</label>
-                </fieldset>
-                <!-- For Types -->
-                <fieldset>
-                    <legend>Types</legend>
-                    <input type="checkbox" id="power" name="power" value="Power Type">
-                    <label for="power">Power</label><br>
-                    <input type="checkbox" id="technical" name="technical" value="Technical Type">
-                    <label for="technical">Technical</label><br>
-                    <input type="checkbox" id="speed" name="speed" value="Speed Type">
-                    <label for="speed">Speed</label><br>
-                </fieldset>
+                <form id="searchItems">
+                    <fieldset>
+                        <legend>Name Search</legend>
+                        <label for="searchGeneName">Search Gene Name</label><br>
+                        <input type="text" id="searchGeneName" name="searchGeneName"><br>
+                        <label for="searchSkillName">Search Skill Name</label><br>
+                        <input type="text" id="searchSkillName" name="searchSkillName"><br>
+                    </fieldset>
+                    <!-- For elements -->
+                    <fieldset>
+                        <legend>Elements</legend>
+                        <input type="checkbox" id="fire" name="fire" value="Fire">
+                        <label for="fire">Fire</label><br>
+                        <input type="checkbox" id="water" name="water" value="Water">
+                        <label for="water">Water</label><br>
+                        <input type="checkbox" id="ice" name="ice" value="Ice">
+                        <label for="ice">Ice</label><br>
+                        <input type="checkbox" id="thunder" name="thuner" value="Thunder">
+                        <label for="thunder">Thunder</label><br>
+                        <input type="checkbox" id="dragon" name="dragon" value="Dragon">
+                        <label for="dragon">Dragon</label><br>
+                        <input type="checkbox" id="nonElem" name="nonElem" value="Non-Elem">
+                        <label for="nonElem">Non-Elem</label>
+                    </fieldset>
+                    <!-- For Types -->
+                    <fieldset>
+                        <legend>Types</legend>
+                        <input type="checkbox" id="power" name="power" value="Power Type">
+                        <label for="power">Power</label><br>
+                        <input type="checkbox" id="technical" name="technical" value="Technical Type">
+                        <label for="technical">Technical</label><br>
+                        <input type="checkbox" id="speed" name="speed" value="Speed Type">
+                        <label for="speed">Speed</label><br>
+                    </fieldset>
 
-                <!-- For Gene Size -->
-                <fieldset>
-                    <legend>Gene Size</legend>
-                    <input type="checkbox" id="small" name="small" value="1">
-                    <label for="small">S</label><br>
-                    <input type="checkbox" id="medium" name="medium" value="2">
-                    <label for="medium">M</label><br>
-                    <input type="checkbox" id="large" name="large" value="3">
-                    <label for="large">L</label><br>
-                    <input type="checkbox" id="XL" name="XL" value="4">
-                    <label for="XL">XL</label><br>
-                </fieldset>
-                <!-- Submit Button -->
-                <fieldset>
-                    <button type="button" id="searchButton" onclick="search()">Search</button>
-                </fieldset>
+                    <!-- For Gene Size -->
+                    <fieldset>
+                        <legend>Gene Size</legend>
+                        <input type="checkbox" id="small" name="small" value="1">
+                        <label for="small">S</label><br>
+                        <input type="checkbox" id="medium" name="medium" value="2">
+                        <label for="medium">M</label><br>
+                        <input type="checkbox" id="large" name="large" value="3">
+                        <label for="large">L</label><br>
+                        <input type="checkbox" id="XL" name="XL" value="4">
+                        <label for="XL">XL</label><br>
+                    </fieldset>
+                    <!-- Submit Button -->
+                    <fieldset>
+                        <button type="button" id="searchButton" onclick="search()">Search</button>
+                    </fieldset>
 
-            </form>
-            <div id="searchitems"></div>
-            <!-- <div id="searchItems">
+                </form>
+                <div id="searchitems"></div>
+                <!-- <div id="searchItems">
                 <div>
                     <h2>Gene Name Search</h2>
                     <input type="search" id="geneSearch" name="q" placeholder="Search Gene Name..." size="30">
@@ -119,11 +120,12 @@
                     <div id="searchedSkills"></div>
                 </div>
             </div> -->
-        </div>
+            </div>
 
-        <div id="mainRightColumn">
-            <h2 id="geneListTitle">Gene List</h2>
-            <div id="geneList" class="geneListItems"></div>
+            <div id="mainRightColumn">
+                <h2 id="geneListTitle">Gene List</h2>
+                <div id="geneList" class="geneListItems"></div>
+            </div>
         </div>
     </main>
 </body>

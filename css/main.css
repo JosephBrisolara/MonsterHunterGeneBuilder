@@ -50,7 +50,7 @@ body {
 }
 
 /* Creating the Two Columns from main */
-main {
+#mainContainer {
     display: grid;
     grid-template-columns: 65% 30%;
 }
