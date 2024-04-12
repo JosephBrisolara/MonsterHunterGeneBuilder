@@ -137,38 +137,3 @@ function saveRandomLoadout() {
     sessionStorage.setItem("Loadouts", JSON.stringify(Loadouts));
     console.log(sessionStorage.getItem("Loadouts"));
 }
-
-// Search Feature
-
-
-function searchGenes() {
-    // Get the string from the search bar
-    geneNameInput = document.getElementById("geneSearch").value;
-    const regex = new RegExp(geneNameInput)
-
-    // Empty the Container to Prepare to add GeneCards
-    document.getElementById("searchedGenes").innerHTML = null;
-
-    // Use regex to compare the string to all gene names in the gene array
-    for (let i = 0; i < genes.length; i++) {
-        if (regex.test(genes[i].name)) {
-            generateGeneCard(genes[i], "searchedGenes")
-        }
-    }
-}
-
-function searchSkills() {
-    // Get the string from the search bar
-    skillNameInput = document.getElementById("skillSearch").value;
-    const regex = new RegExp(skillNameInput)
-
-    // Empty the Container to Prepare to add GeneCards
-    document.getElementById("searchedSkills").innerHTML = null;
-
-    // Use regex to compare the string to all gene names in the gene array
-    for (let i = 0; i < genes.length; i++) {
-        if (regex.test(genes[i].skillName)) {
-            generateGeneCard(genes[i], "searchedSkills")
-        }
-    }
-}
