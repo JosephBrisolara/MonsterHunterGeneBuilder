@@ -179,6 +179,7 @@ function styleBingoBuffs(buffs, parentNode) {
     parentNode.appendChild(buffTable);
 }
 
-function sum(num1, num2) {
-    return 1 + 2;
-} module.exports = sum;
+function add(num1, num2) {
+    return num1 + num2;
+}
+module.exports = add;
