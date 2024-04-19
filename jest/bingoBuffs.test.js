@@ -1,4 +1,11 @@
-// const bingoBuffs = require("../scripts/displayAllLoadouts");
+/**
+@jest-environment jsdom
+**/
+
+const sum = require("../scripts/displayAllLoadouts");
+const bingoBuffs = require("../scripts/displayAllLoadouts");
+const genes = require("../scripts/data");
+
 
 test('Add 1 + 1', () => {
     expect(sum(1, 1).toBe(2));
