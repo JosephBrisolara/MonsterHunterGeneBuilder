@@ -6,6 +6,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "debug": "^4.3.4",
     "jest-environment-jsdom": "^29.7.0"
   }
 }

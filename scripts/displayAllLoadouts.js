@@ -154,7 +154,7 @@ function bingoBuffs(loadout) {
         buffs[loadout.bottomLeft.type] = buffs[loadout.bottomLeft.type] + 1;
     }
     return buffs;
-}
+} module.exports = bingoBuffs;
 
 
 function styleBingoBuffs(buffs, parentNode) {
@@ -181,4 +181,4 @@ function styleBingoBuffs(buffs, parentNode) {
 
 function sum(num1, num2) {
     return 1 + 2;
-}
+} module.exports = sum;
