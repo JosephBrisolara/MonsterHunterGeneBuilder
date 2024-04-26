@@ -8,7 +8,6 @@ const geneClass = require("../scripts/geneClass");
 
 test('Add 1 + 1', () => {
     expect(displayAllLoadouts.add(1, 1)).toEqual(2);
-    expect(displayAllLoadouts.add(1, 2)).toEqual(2);
 })
 
 test('test all fire grid', () => {
@@ -22,7 +21,7 @@ test('test all fire grid', () => {
 
 });
 
-test("test all elements", () => {
+test("test all bingoBuffs elements", () => {
     const elements = ["Non-Elem", "Fire", "Ice", "Thunder", "Dragon"];
     elements.forEach((element) => {
         const elementGenes = genes.filter((gene) => {
@@ -39,4 +38,25 @@ test("test all elements", () => {
             elementGenes[8]);
         expect(displayAllLoadouts.bingoBuffs(loadout)[element]).toEqual(8);
     });
+})
+
+test("test all bingoBuffs types", () => {
+    const types = ["Power Type", "Speed Type", "Technical Type"];
+    types.forEach((type) => {
+        const typeGenes = genes.filter((gene) => {
+            return gene.type == type;
+        });
+        const loadout = new geneClass.Loadout('Name',
+            typeGenes[0],
+            typeGenes[1],
+            typeGenes[2],
+            typeGenes[3],
+            typeGenes[4],
+            typeGenes[5],
+            typeGenes[6],
+            typeGenes[7],
+            typeGenes[8]
+        );
+        expect(displayAllLoadouts.bingoBuffs(loadout)[type]).toEqual(8);
+    })
 })
