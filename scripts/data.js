@@ -1,4 +1,4 @@
-genes = [
+module.exports = genes = [
     {
         "id": "1",
         "name": "Whip Gene (S)",

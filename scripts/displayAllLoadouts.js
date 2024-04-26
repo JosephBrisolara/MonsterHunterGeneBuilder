@@ -1,3 +1,5 @@
+module.exports = {};
+
 window.addEventListener("load", function () {
     displayLoadouts();
 })
@@ -76,7 +78,7 @@ function displayLoadouts() {
 }
 
 // Pass in a Loadout and return json with the bingo buffs
-function bingoBuffs(loadout) {
+module.exports.bingoBuffs = function bingoBuffs(loadout) {
     buffs = {
         "Non-Elem": 0,
         "Fire": 0,
@@ -154,7 +156,7 @@ function bingoBuffs(loadout) {
         buffs[loadout.bottomLeft.type] = buffs[loadout.bottomLeft.type] + 1;
     }
     return buffs;
-} module.exports = bingoBuffs;
+}
 
 
 function styleBingoBuffs(buffs, parentNode) {
@@ -179,7 +181,6 @@ function styleBingoBuffs(buffs, parentNode) {
     parentNode.appendChild(buffTable);
 }
 
-function add(num1, num2) {
+module.exports.add = function add(num1, num2) {
     return num1 + num2;
 }
-module.exports = add;

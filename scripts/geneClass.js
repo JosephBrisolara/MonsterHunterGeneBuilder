@@ -1,4 +1,6 @@
-class Gene {
+module.exports = {};
+
+module.exports.Gene = class Gene {
     constructor(id, name, skillName, type, element, description, size) {
         this.id = id;
         this.name = name;
@@ -10,7 +12,7 @@ class Gene {
     }
 }
 
-class Loadout {
+module.exports.Loadout = class Loadout {
     constructor(monsterName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight) {
         this.monsterName = monsterName;
         this.topLeft = topLeft;
