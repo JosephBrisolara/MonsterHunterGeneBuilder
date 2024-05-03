@@ -1,7 +1,3 @@
-/**
-@jest-environment jsdom
-**/
-
 const displayAllLoadouts = require("../scripts/displayAllLoadouts");
 const genes = require("../scripts/data");
 const geneClass = require("../scripts/geneClass");

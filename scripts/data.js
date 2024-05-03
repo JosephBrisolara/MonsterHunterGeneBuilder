@@ -1,3 +1,17 @@
+/*
+This is the list of all genes obtained from webscraping using pythons beautiful soup from
+https://mhst.kiranico.com/mhs2/data/genes
+The components taken include:
+"id" --> seems to skip a few numbers as seen by having no id of 2
+"name" --> This is the name of the gene
+"skillName" --> This is the name of the skill that the gene gives to the monster
+"type" --> Either "Technical Type", "Speed Type", or "Power Type"
+"element" --> Either "Non-Elem", "Fire", "Water", "Ice", "Thunder", or "Dragon"
+"size" --> The gene size. Either "1", "2", "3", or "4" which corresponds to Small, Medium, Large, and XL
+"description" --> Details the description of the skill given to the monster or the passive buff given to the monstie
+                    Also details the effects of stacking genes on top of each other
+*/
+
 module.exports = genes = [
     {
         "id": "1",
