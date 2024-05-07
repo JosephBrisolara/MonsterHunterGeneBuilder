@@ -18,7 +18,7 @@ test('test all fire grid', () => {
 });
 
 test("test all bingoBuffs elements", () => {
-    const elements = ["Non-Elem", "Fire", "Ice", "Thunder", "Dragon"];
+    const elements = ["Non-Elem", "Fire", "Ice", "Thunder", "Dragon", "Water"];
     elements.forEach((element) => {
         const elementGenes = genes.filter((gene) => {
             return gene.element == element;

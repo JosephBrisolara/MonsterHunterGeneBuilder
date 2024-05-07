@@ -1,6 +1,4 @@
-module.exports = {};
-
-module.exports.Gene = class Gene {
+class Gene {
     constructor(id, name, skillName, type, element, description, size) {
         this.id = id;
         this.name = name;
@@ -12,7 +10,7 @@ module.exports.Gene = class Gene {
     }
 }
 
-module.exports.Loadout = class Loadout {
+class Loadout {
     constructor(monsterName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight) {
         this.monsterName = monsterName;
         this.topLeft = topLeft;
@@ -73,4 +71,9 @@ function generateGeneCard(gene, parentID) {
 
     // Appending the Gene Card to the container specified
     document.getElementById(parentID).appendChild(p);
+}
+
+if (typeof module === 'object') {
+    module.exports.Loadout = Loadout;
+    module.exports.Gene = Gene
 }

@@ -11,11 +11,7 @@ The components taken include:
 "description" --> Details the description of the skill given to the monster or the passive buff given to the monstie
                     Also details the effects of stacking genes on top of each other
 */
-if (typeof module === 'object') {
-    module.exports = genes;
-}
-
-module.exports = genes = [
+genes = [
     {
         "id": "1",
         "name": "Whip Gene (S)",
@@ -3788,3 +3784,7 @@ module.exports = genes = [
         "description": "Boosts abilities when you lose a Heart. Seriously boosts attack and defense. (Default) Greatly boosts attack and defense. (UP 1) Substantially boosts attack and defense. (UP 2) Seriously boosts attack and defense."
     }
 ]
+
+if (typeof module === 'object') {
+    module.exports = genes;
+}
