@@ -32,13 +32,13 @@
 
 #displayAllLoadouts {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     gap: 15px;
 }
 
 .buffTable {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     text-align: center;
     margin: 10px;
 }

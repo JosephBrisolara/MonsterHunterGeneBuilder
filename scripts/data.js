@@ -8,7 +8,7 @@ The components taken include:
 "type" --> Either "Technical Type", "Speed Type", or "Power Type"
 "element" --> Either "Non-Elem", "Fire", "Water", "Ice", "Thunder", or "Dragon"
 "size" --> The gene size. Either "1", "2", "3", or "4" which corresponds to Small, Medium, Large, and XL
-"description" --> Details the description of the skill given to the monster or the passive buff given to the monstie
+"description" --> Details the description of the skill given to the monster or the passive buff given to the monster
                     Also details the effects of stacking genes on top of each other
 */
 genes = [

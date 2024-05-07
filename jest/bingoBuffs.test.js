@@ -1,10 +1,6 @@
-const displayAllLoadouts = require("../scripts/displayAllLoadouts");
+const bingoBuffs = require("../scripts/displayAllLoadouts");
 const genes = require("../scripts/data");
 const geneClass = require("../scripts/geneClass");
-
-test('Add 1 + 1', () => {
-    expect(displayAllLoadouts.add(1, 1)).toEqual(2);
-})
 
 test('test all fire grid', () => {
     const fireGenes = genes.filter((gene) => {
@@ -13,7 +9,7 @@ test('test all fire grid', () => {
 
     // constructor(monsterName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight)
     const loadout = new geneClass.Loadout('Fire Monster Name', fireGenes[0], fireGenes[1], fireGenes[2], fireGenes[3], fireGenes[4], fireGenes[5], fireGenes[6], fireGenes[7], fireGenes[8]);
-    expect(displayAllLoadouts.bingoBuffs(loadout)["Fire"]).toEqual(8);
+    expect(bingoBuffs(loadout)["Fire"]).toEqual(8);
 
 });
 
@@ -32,7 +28,7 @@ test("test all bingoBuffs elements", () => {
             elementGenes[6],
             elementGenes[7],
             elementGenes[8]);
-        expect(displayAllLoadouts.bingoBuffs(loadout)[element]).toEqual(8);
+        expect(bingoBuffs(loadout)[element]).toEqual(8);
     });
 })
 
@@ -53,6 +49,6 @@ test("test all bingoBuffs types", () => {
             typeGenes[7],
             typeGenes[8]
         );
-        expect(displayAllLoadouts.bingoBuffs(loadout)[type]).toEqual(8);
+        expect(bingoBuffs(loadout)[type]).toEqual(8);
     })
 })

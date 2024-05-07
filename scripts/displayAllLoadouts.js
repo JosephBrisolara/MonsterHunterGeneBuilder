@@ -1,7 +1,9 @@
+// displays all the loadouts in the session storage on window load
 window.addEventListener("load", function () {
     displayLoadouts();
 })
 
+// creates the displayable Loadout Card
 function createLoadoutCard(loadout, parentID) {
     if (typeof loadout === 'string') {
         loadout = JSON.parse(loadout);
@@ -12,16 +14,16 @@ function createLoadoutCard(loadout, parentID) {
     c.value = loadout;
     c.setAttribute("class", "LoadoutCard")
 
-    // Appending the Gene Card to the c specified
+    // Appending the Card to the parent node specified by id
     document.getElementById(parentID).appendChild(c);
 
-    // Adding the Loadout Name to the Loadout Card
+    // Adding the Loadout Name to the Loadout Card and setting a class for later styling
     const t = document.createElement('p');
     t.innerText = loadout.monsterName;
     t.setAttribute("class", "LoadoutLabel");
     c.appendChild(t);
 
-    // Creating elements for the genes in the grid
+    // Creating elements for the genes in the grid and setting a class for later styling
     const g = document.createElement('div');
     g.setAttribute("class", "LoadoutGrid");
 
@@ -60,11 +62,13 @@ function createLoadoutCard(loadout, parentID) {
     // Attach LoadoutGrid to LoadoutCard
     c.appendChild(g);
 
+    // calculate the buffs from the loadout
     const buffs = bingoBuffs(loadout);
     // Style the buffs and also append to c
-    const buffstring = styleBingoBuffs(buffs, c);
+    styleBingoBuffs(buffs, c);
 }
 
+// displays all the loadouts found in the session storage to the displayAllLoadouts page
 function displayLoadouts() {
     for (let i = 0; i < sessionStorage.length; i++) {
         const loadoutString = sessionStorage.getItem(sessionStorage.key(i));
@@ -157,10 +161,12 @@ function bingoBuffs(loadout) {
     return buffs;
 }
 
-
+// Adds attributes to the bingoBuffs for later styling and also appends to the parentNode (the Loadout Card)
 function styleBingoBuffs(buffs, parentNode) {
+    // Create the container to hold the bingo buffs and set class for later styling
     const buffTable = document.createElement("div");
     buffTable.setAttribute("class", "buffTable");
+    // For each entry in the bingo buffs (there are 9), create a container and append it to the buffTable and add classes for later styling
     for (const [key, value] of Object.entries(buffs)) {
         const buffTableEntry = document.createElement("div");
         buffTableEntry.setAttribute("class", "buffTableEntry");
@@ -180,11 +186,6 @@ function styleBingoBuffs(buffs, parentNode) {
     parentNode.appendChild(buffTable);
 }
 
-function add(num1, num2) {
-    return num1 + num2;
-}
-
 if (typeof module === 'object') {
-    module.exports.add = add;
-    module.exports.bingoBuffs = bingoBuffs;
+    module.exports = bingoBuffs;
 }

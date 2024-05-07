@@ -5,7 +5,6 @@ window.addEventListener("load", function () {
 
 });
 
-// need to break up into getting the gene array and displaying it
 function search() {
     // Get all of the values from the input fields
     const geneName = document.getElementById("searchGeneName");
@@ -54,21 +53,16 @@ function search() {
         const typeBool = ((power.checked == false) && (technical.checked == false) && (speed.checked == false));
         // No size checked on form
         const sizeBool = ((small.checked == false) && (medium.checked == false) && (large.checked == false) && (xl.checked == false));
-        // No checkboxes filled on form
-        const checkboxBool = elementBool && typeBool && sizeBool;
 
-        if (checkboxBool) {
-            return (geneNameBool && skillNameBool);
-        } else {
-            return geneNameBool && skillNameBool && (fireBool || waterBool || iceBool || thunderBool || dragonBool || nonElemBool || elementBool) && (powerBool || technicalBool || speedBool || typeBool) && (smallBool || mediumBool || largeBool || xlBool || sizeBool)
-        }
+        return geneNameBool && skillNameBool && (fireBool || waterBool || iceBool || thunderBool || dragonBool || nonElemBool || elementBool) && (powerBool || technicalBool || speedBool || typeBool) && (smallBool || mediumBool || largeBool || xlBool || sizeBool)
+        
     })
 
     // Generate Gene Cards to geneList
     // Start by emptying geneList
     const geneList = document.getElementById("geneList");
     geneList.innerHTML = '';
-    // add the cards
+    // add the gene cards
     for (let i = 0; i < results.length; i++) {
         generateGeneCard(results[i], "geneList");
     }
@@ -114,6 +108,7 @@ function saveLoadout() {
     sessionStorage.setItem(newLoadout.monsterName, JSON.stringify(newLoadout));
 }
 
+// Create a random loadout by randomly selecting a gene for each slot
 function saveRandomLoadout() {
     // save max value
     const max = genes.length;
@@ -131,7 +126,6 @@ function saveRandomLoadout() {
 
     // Getting the input name
     loadoutName = document.getElementById("loadoutName").value;
-
     // Creating a loadout
     newLoadout = new Loadout(loadoutName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight);
     // Signal that the new loadout has been added

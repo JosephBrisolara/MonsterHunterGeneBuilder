@@ -6,7 +6,6 @@
 
     <!-- Sortable js library -->
     <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
 
     <script src="scripts/geneClass.js"></script>
     <script src="scripts/sortable.js"></script>
@@ -33,7 +32,6 @@
                 <input type="text" id="loadoutName" placeholder="Input Name for Loadout...">
                 <button id="saveLoadout" onclick="saveLoadout()">Save Loadout</button>
                 <button id="randomLoadout" onclick="saveRandomLoadout()">Random Loadout</button><br>
-
 
                 <div id="geneGrid" class="geneGrid">
                     <div id="topLeft" class="gridItem"></div>
@@ -83,7 +81,6 @@
                         <input type="checkbox" id="speed" name="speed" value="Speed Type">
                         <label for="speed">Speed</label><br>
                     </fieldset>
-
                     <!-- For Gene Size -->
                     <fieldset>
                         <legend>Gene Size</legend>
@@ -100,25 +97,8 @@
                     <fieldset>
                         <button type="button" id="searchButton" onclick="search()">Search</button>
                     </fieldset>
-
                 </form>
                 <div id="searchitems"></div>
-                <!-- <div id="searchItems">
-                <div>
-                    <h2>Gene Name Search</h2>
-                    <input type="search" id="geneSearch" name="q" placeholder="Search Gene Name..." size="30">
-                    <button id="searchButton" onclick="searchGenes()">Search</button>
-                    <br>
-                    <div id="searchedGenes"></div>
-                </div>
-                <div>
-                    <h2>Skill Name Search</h2>
-                    <input type="search" id="skillSearch" name="q" placeholder="Search Skill Name..." size="30">
-                    <button id="searchButton" onclick="searchSkills()">Search</button>
-                    <br>
-                    <div id="searchedSkills"></div>
-                </div>
-            </div> -->
             </div>
 
             <div id="mainRightColumn">
@@ -128,5 +108,4 @@
         </div>
     </main>
 </body>
-
 </html>

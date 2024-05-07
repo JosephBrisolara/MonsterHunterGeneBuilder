@@ -1,3 +1,14 @@
+/*
+Creates a gene class
+"id" --> integer, gotten from the genes array
+"name" --> This is the name of the gene
+"skillName" --> This is the name of the skill that the gene gives to the monster
+"type" --> Either "Technical Type", "Speed Type", or "Power Type"
+"element" --> Either "Non-Elem", "Fire", "Water", "Ice", "Thunder", or "Dragon"
+"size" --> The gene size. Either "1", "2", "3", or "4" which corresponds to Small, Medium, Large, and XL
+"description" --> Details the description of the skill given to the monster or the passive buff given to the monster
+                    Also details the effects of stacking genes on top of each other
+*/
 class Gene {
     constructor(id, name, skillName, type, element, description, size) {
         this.id = id;
@@ -10,6 +21,7 @@ class Gene {
     }
 }
 
+// Create a loadout class that includes the name of the loadout (string) and the 9 genes that form the 3x3 grid
 class Loadout {
     constructor(monsterName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight) {
         this.monsterName = monsterName;
@@ -25,7 +37,7 @@ class Loadout {
     }
 }
 
-// Create the Gene Card that is generated in gene list
+// Create a Gene Card that can be displayed from the inputs of the gene and the id of the container to hold the gene card
 function generateGeneCard(gene, parentID) {
     // Create the card
     const p = document.createElement("div");
@@ -73,6 +85,7 @@ function generateGeneCard(gene, parentID) {
     document.getElementById(parentID).appendChild(p);
 }
 
+// Used for testing in jest
 if (typeof module === 'object') {
     module.exports.Loadout = Loadout;
     module.exports.Gene = Gene

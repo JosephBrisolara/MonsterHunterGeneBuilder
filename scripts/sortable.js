@@ -29,8 +29,6 @@ window.addEventListener("load", function () {
         }
     });
 
-
-
     // Allow the genes to be put into the gene grid containers
     gridItemArray = document.getElementsByClassName('gridItem');
     for (var i = 0; i < gridItemArray.length; i++) {
