@@ -27,9 +27,6 @@ module.exports.Loadout = class Loadout {
     }
 }
 
-// Create an empty array for the loadouts
-let Loadouts = [];
-
 // Create the Gene Card that is generated in gene list
 function generateGeneCard(gene, parentID) {
     // Create the card

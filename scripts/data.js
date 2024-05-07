@@ -11,6 +11,9 @@ The components taken include:
 "description" --> Details the description of the skill given to the monster or the passive buff given to the monstie
                     Also details the effects of stacking genes on top of each other
 */
+if (typeof module === 'object') {
+    module.exports = genes;
+}
 
 module.exports = genes = [
     {
