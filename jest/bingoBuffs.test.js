@@ -2,17 +2,6 @@ const bingoBuffs = require("../scripts/displayAllLoadouts");
 const genes = require("../scripts/data");
 const geneClass = require("../scripts/geneClass");
 
-test('test all fire grid', () => {
-    const fireGenes = genes.filter((gene) => {
-        return gene.element == 'Fire';
-    });
-
-    // constructor(monsterName, topLeft, topMiddle, topRight, middleLeft, middleMiddle, middleRight, bottomLeft, bottomMiddle, bottomRight)
-    const loadout = new geneClass.Loadout('Fire Monster Name', fireGenes[0], fireGenes[1], fireGenes[2], fireGenes[3], fireGenes[4], fireGenes[5], fireGenes[6], fireGenes[7], fireGenes[8]);
-    expect(bingoBuffs(loadout)["Fire"]).toEqual(8);
-
-});
-
 test("test all bingoBuffs elements", () => {
     const elements = ["Non-Elem", "Fire", "Ice", "Thunder", "Dragon", "Water"];
     elements.forEach((element) => {
