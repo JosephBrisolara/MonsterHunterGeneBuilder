@@ -1,5 +1,4 @@
 const genes = require("../scripts/data");
-const geneClass = require("../scripts/geneClass");
 
 test("Check elements in genes array", () => {
     elements = ["Fire", "Water", "Ice", "Thunder", "Dragon", "Non-Elem"];
@@ -14,3 +13,11 @@ test("Check types in genes array", () => {
         expect(types.includes(gene.type)).toBe(true);
     });
 });
+
+test("Check gene sizes in genes array", () => {
+    sizes = ["1", "2", "3", "4"];
+    genes.forEach((gene) => {
+        expect(sizes.includes(gene.size)).toBe(true);
+    });
+});
+
