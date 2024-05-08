@@ -1,8 +1,8 @@
 .LoadoutCard {
-    background-color: blueviolet;
+    background-color: #7AFDD6;
     margin: 10px;
     padding: 10px;
-    border: solid green 3px;
+    border: solid #4dcfa8 3px;
     border-radius: 5px;
 }
 
@@ -18,12 +18,9 @@
     gap: 5px;
 }
 
-.bingoBuffs {
-    border: solid green 2px;
-}
-
 .LoadoutGrid p {
-    border: solid lightblue 2px;
+    background-color: #77FF94;
+    border: solid #56bb6c 2px;
     border-radius: 2px;
     text-align: center;
     margin: 5px;
@@ -38,15 +35,15 @@
 
 .buffTable {
     display: grid;
-    grid-template-columns: auto auto auto;
-    text-align: center;
-    margin: 10px;
+    grid-template-columns: 12% 15% 15%;
+    text-align: right;
+    margin: 8px 0px;
 }
 
 .buffTableEntry {
     display: inline;
-    border: lightblue solid 2px;
-    margin: 5px;
+    /* border: lightblue solid 2px; */
+    margin: 0px;
 }
 
 .buffTableKey {
