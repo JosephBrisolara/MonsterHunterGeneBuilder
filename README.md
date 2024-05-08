@@ -12,7 +12,7 @@ For using the jest testing, npm will be required. To check if you already have i
 ## How to Use
 When you first open home.html, there will be a list of genes on the right and a 3x3 grid on the left. You can drag any combination of 9 genes from the list to the grid. Then, enter a loadout name and hit the save loadout button to register a loadout. That loadout will now appear in the loadouts page. For the random loadout, enter a name for the loadout in the input box and then hit the random loadout button to register the loadout. There can only be one loadout per name.
 
-For using the search feature for gene name or skill name uses the includes() function to see if the trimmed passed in paramter is included in the name. For the check boxes, if box is checked then only genes of that box will appear on the right. For example, if Fire is checked, then only Fire element genes will appear on the right. However, if both Fire and Water boxes are checked, then both Fire and Water genes will appear on the right. If Fire, Water, and Power Type are all checked then only genes that are Fire or Water element AND power type will appear on the right.
+Using the search feature for gene name or skill name uses the includes() function to see if the trimmed passed in parameter is included in the name. For the check boxes, if the box is checked then only genes of that box will appear on the right. For example, if Fire is checked, then only Fire element genes will appear on the right. However, if both Fire and Water boxes are checked, then both Fire and Water genes will appear on the right. If Fire, Water, and Power Type are all checked then only genes that are Fire or Water element AND power type will appear on the right.
 
 The Genes page simply lists all of the genes.
 
