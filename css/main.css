@@ -16,6 +16,7 @@
 }
 
 .geneListItem {
+    color: black;
     display: grid;
     grid-template-columns: 30% 70%;
     column-gap: 5px;
@@ -26,7 +27,6 @@
     margin: 5px;
     min-height: 100px;
     max-width: 600px;
-    color: red;
     background-color: #77FF94;
     border: #56bb6c 3px solid;
     cursor: move;
@@ -35,7 +35,6 @@
 /* Styling all children of geneListItem */
 .geneListItem>*>* {
     margin: 0 0;
-    color: green;
 }
 
 body {
@@ -45,6 +44,11 @@ body {
 #loadoutName {
     padding: 5px;
     margin: 3px;
+}
+
+#loadoutList{
+    display: inline;
+    color: black;
 }
 
 /* Creating the Two Columns from main */
